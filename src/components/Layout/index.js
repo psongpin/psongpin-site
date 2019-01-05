@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 import { Global } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
 
-import Header from '../Header'
-import Footer from '../Footer';
+import MainHeader from '../MainHeader'
+import MainFooter from '../MainFooter';
 import globalStyles from './styles'
 import theme from './theme'
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Global styles={globalStyles} />
-    <Header />
+    <MainHeader />
     <div
       style={{
               margin: `0 auto`,
@@ -22,7 +22,7 @@ const Layout = ({ children }) => (
     >
       {children}
     </div>
-    <Footer />
+    <MainFooter />
   </ThemeProvider>
 )
 
