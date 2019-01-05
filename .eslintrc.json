@@ -13,5 +13,6 @@
   },
   "env": {
     "browser": true
-  }
+  },
+  "parser": "babel-eslint"
 }
