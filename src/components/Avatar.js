@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import MyPhoto from '../../images/PaulSimonOngpin.jpg'
+import MyPhoto from '../images/PaulSimonOngpin.jpg'
 
 const Avatar = styled.img`
   width: ${props => props.width};

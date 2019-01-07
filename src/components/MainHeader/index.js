@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
-import Avatar from './Avatar'
+import Avatar from '../Avatar'
 import Navigation from './Navigation'
 
 const Header = styled.header`

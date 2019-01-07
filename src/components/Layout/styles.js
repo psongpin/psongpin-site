@@ -591,4 +591,8 @@ export default css`
   a {
     color: ${theme.colors.primary};
   }
+
+  p {
+    line-height: 1.5;
+  }
 `

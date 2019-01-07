@@ -46,8 +46,6 @@ const ParagraphContainer = styled.div`
   margin-top: 30px;
 
   p {
-    line-height: 1.5;
-
     &:last-child {
       margin-bottom: 0;
     }
