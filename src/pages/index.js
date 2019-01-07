@@ -79,7 +79,7 @@ const IndexPage = () => (
     />
     <CustomContent width="800px">
       <TypistText>
-        <Typist>
+        <Typist cursor={{ hideWhenDone: true }}>
           {`I build `}
           <span>websites</span>
           {'.'}
