@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 
 import Avatar from './Avatar'
 import Navigation from './Navigation'
@@ -23,7 +24,9 @@ const Header = styled.header`
 const MainHeader = () => (
   <Header>
     <div>
-      <Avatar width="60px" height="60px" />
+      <Link to="/">
+        <Avatar width="60px" height="60px" />
+      </Link>
       <Navigation />
     </div>
   </Header>

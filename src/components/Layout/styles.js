@@ -581,10 +581,8 @@ export default css`
   }
 
   /* Custom */
-  *,
-  *,
-  ::before,
-  ::after {
+  html,
+  body {
     font-family: 'Lato', sans-serif;
     font-size: 14px;
     color: ${theme.colors.base};

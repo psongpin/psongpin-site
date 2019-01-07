@@ -37,7 +37,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Lato'],
+          families: ['Lato:400,700,700i,900'],
         },
       },
     },
