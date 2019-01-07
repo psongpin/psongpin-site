@@ -6,7 +6,8 @@
     "react/prefer-stateless-function": "off",
     "react/require-default-props": "off",
     "react/prop-types": "off",
-    "react/no-danger": "off"
+    "react/no-danger": "off",
+    "react/jsx-wrap-multilines": [0]
   },
   "settings": {
     "import/core-modules": []

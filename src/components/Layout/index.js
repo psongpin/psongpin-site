@@ -1,28 +1,29 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Global } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
+import styled from '@emotion/styled'
 
 import MainHeader from '../MainHeader'
-import MainFooter from '../MainFooter';
+import MainFooter from '../MainFooter'
 import globalStyles from './styles'
 import theme from './theme'
 
+const Wrapper = styled.div`
+  min-height: 100vh;
+  background-color: ${props => props.theme.colors.mainBackground};
+`
+
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <Global styles={globalStyles} />
-    <MainHeader />
-    <div
-      style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `0px 1.0875rem 1.45rem`,
-              paddingTop: 0,
-            }}
-    >
-      {children}
-    </div>
-    <MainFooter />
+    <Fragment>
+      <Global styles={globalStyles} />
+      <Wrapper>
+        <MainHeader />
+        <main>{children}</main>
+        <MainFooter />
+      </Wrapper>
+    </Fragment>
   </ThemeProvider>
 )
 

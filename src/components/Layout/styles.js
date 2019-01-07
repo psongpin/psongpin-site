@@ -1,36 +1,74 @@
 import { css } from '@emotion/core'
 
+import theme from './theme'
+
 export default css`
+  /*! sanitize.css v8.0.0 | CC0 License | github.com/csstools/sanitize.css */
+
   /* Document
-    ========================================================================== */
+ * ========================================================================== */
 
   /**
-  * 1. Correct the line height in all browsers.
-  * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 1. Remove repeating backgrounds in all browsers (opinionated).
+ * 2. Add border box sizing in all browsers (opinionated).
+ */
+
+  *,
+  ::before,
+  ::after {
+    background-repeat: no-repeat; /* 1 */
+    box-sizing: border-box; /* 2 */
+  }
+
+  /**
+  * 1. Add text decoration inheritance in all browsers (opinionated).
+  * 2. Add vertical alignment inheritance in all browsers (opinionated).
+  */
+
+  ::before,
+  ::after {
+    text-decoration: inherit; /* 1 */
+    vertical-align: inherit; /* 2 */
+  }
+
+  /**
+  * 1. Use the default cursor in all browsers (opinionated).
+  * 2. Use the default user interface font in all browsers (opinionated).
+  * 3. Correct the line height in all browsers.
+  * 4. Use a 4-space tab width in all browsers (opinionated).
+  * 5. Prevent adjustments of font size after orientation changes in
+  *    IE on Windows Phone and in iOS.
+  * 6. Breaks words to prevent overflow in all browsers (opinionated).
   */
 
   html {
-    line-height: 1.15; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+    cursor: default; /* 1 */
+    font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system,
+      /* Windows 6+ */ Segoe UI, /* Android 4+ */ Roboto,
+      /* Ubuntu 10.10+ */ Ubuntu, /* Gnome 3+ */ Cantarell,
+      /* KDE Plasma 5+ */ Noto Sans, /* fallback */ sans-serif,
+      /* macOS emoji */ 'Apple Color Emoji',
+      /* Windows emoji */ 'Segoe UI Emoji',
+      /* Windows emoji */ 'Segoe UI Symbol',
+      /* Linux emoji */ 'Noto Color Emoji'; /* 2 */
+
+    line-height: 1.15; /* 3 */
+    -moz-tab-size: 4; /* 4 */
+    tab-size: 4; /* 4 */
+    -ms-text-size-adjust: 100%; /* 5 */
+    -webkit-text-size-adjust: 100%; /* 5 */
+    word-break: break-word; /* 6 */
   }
 
   /* Sections
-    ========================================================================== */
+  * ========================================================================== */
 
   /**
-  * Remove the margin in all browsers.
+  * Remove the margin in all browsers (opinionated).
   */
 
   body {
     margin: 0;
-  }
-
-  /**
-  * Render the main element consistently in IE.
-  */
-
-  main {
-    display: block;
   }
 
   /**
@@ -44,31 +82,53 @@ export default css`
   }
 
   /* Grouping content
-    ========================================================================== */
+  * ========================================================================== */
 
   /**
-  * 1. Add the correct box sizing in Firefox.
+  * 1. Add the correct sizing in Firefox.
   * 2. Show the overflow in Edge and IE.
   */
 
   hr {
-    box-sizing: content-box; /* 1 */
     height: 0; /* 1 */
     overflow: visible; /* 2 */
   }
 
   /**
-  * 1. Correct the inheritance and scaling of font size in all browsers.
+  * Add the correct display in IE.
+  */
+
+  main {
+    display: block;
+  }
+
+  /**
+  * Remove the list style on navigation lists in all browsers (opinionated).
+  */
+
+  nav ol,
+  nav ul {
+    list-style: none;
+  }
+
+  /**
+  * 1. Use the default monospace user interface font
+  *    in all browsers (opinionated).
   * 2. Correct the odd em font sizing in all browsers.
   */
 
   pre {
-    font-family: monospace, monospace; /* 1 */
+    font-family:
+     /* macOS 10.10+ */ Menlo, /* Windows 6+ */ Consolas,
+      /* Android 4+ */ Roboto Mono, /* Ubuntu 10.10+ */ Ubuntu Monospace,
+      /* KDE Plasma 5+ */ Noto Mono, /* KDE Plasma 4+ */ Oxygen Mono,
+      /* Linux/OpenOffice fallback */ Liberation Mono, /* fallback */ monospace; /* 1 */
+
     font-size: 1em; /* 2 */
   }
 
   /* Text-level semantics
-    ========================================================================== */
+  * ========================================================================== */
 
   /**
   * Remove the gray background on active links in IE 10.
@@ -79,14 +139,12 @@ export default css`
   }
 
   /**
-  * 1. Remove the bottom border in Chrome 57-
-  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+  * Add the correct text decoration in Edge, IE, Opera, and Safari.
   */
 
   abbr[title] {
-    border-bottom: none; /* 1 */
-    text-decoration: underline; /* 2 */
-    text-decoration: underline dotted; /* 2 */
+    text-decoration: underline;
+    text-decoration: underline dotted;
   }
 
   /**
@@ -99,14 +157,20 @@ export default css`
   }
 
   /**
-  * 1. Correct the inheritance and scaling of font size in all browsers.
+  * 1. Use the default monospace user interface font
+  *    in all browsers (opinionated).
   * 2. Correct the odd em font sizing in all browsers.
   */
 
   code,
   kbd,
   samp {
-    font-family: monospace, monospace; /* 1 */
+    font-family:
+     /* macOS 10.10+ */ Menlo, /* Windows 6+ */ Consolas,
+      /* Android 4+ */ Roboto Mono, /* Ubuntu 10.10+ */ Ubuntu Monospace,
+      /* KDE Plasma 5+ */ Noto Mono, /* KDE Plasma 4+ */ Oxygen Mono,
+      /* Linux/OpenOffice fallback */ Liberation Mono, /* fallback */ monospace; /* 1 */
+
     font-size: 1em; /* 2 */
   }
 
@@ -118,75 +182,127 @@ export default css`
     font-size: 80%;
   }
 
-  /**
-  * Prevent sub and sup elements from affecting the line height in
-  * all browsers.
+  /*
+  * Remove the text shadow on text selections in Firefox 61- (opinionated).
+  * 1. Restore the coloring undone by defining the text shadow
+  *    in all browsers (opinionated).
   */
 
-  sub,
-  sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+  ::-moz-selection {
+    background-color: #b3d4fc; /* 1 */
+    color: #000; /* 1 */
+    text-shadow: none;
   }
 
-  sub {
-    bottom: -0.25em;
-  }
-
-  sup {
-    top: -0.5em;
+  ::selection {
+    background-color: #b3d4fc; /* 1 */
+    color: #000; /* 1 */
+    text-shadow: none;
   }
 
   /* Embedded content
-    ========================================================================== */
+  * ========================================================================== */
+
+  /*
+  * Change the alignment on media elements in all browers (opinionated).
+  */
+
+  audio,
+  canvas,
+  iframe,
+  img,
+  svg,
+  video {
+    vertical-align: middle;
+  }
 
   /**
-  * Remove the border on images inside links in IE 10.
+  * Add the correct display in IE 9-.
+  */
+
+  audio,
+  video {
+    display: inline-block;
+  }
+
+  /**
+  * Add the correct display in iOS 4-7.
+  */
+
+  audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
+
+  /**
+  * Remove the border on images inside links in IE 10-.
   */
 
   img {
     border-style: none;
   }
 
-  /* Forms
-    ========================================================================== */
+  /**
+  * Change the fill color to match the text color in all browsers (opinionated).
+  */
+
+  svg:not([fill]) {
+    fill: currentColor;
+  }
 
   /**
-  * 1. Change the font styles in all browsers.
-  * 2. Remove the margin in Firefox and Safari.
+  * Hide the overflow in IE.
+  */
+
+  svg:not(:root) {
+    overflow: hidden;
+  }
+
+  /* Tabular data
+  * ========================================================================== */
+
+  /**
+  * Collapse border spacing in all browsers (opinionated).
+  */
+
+  table {
+    border-collapse: collapse;
+  }
+
+  /* Forms
+  * ========================================================================== */
+
+  /**
+  * Inherit styling in all browsers (opinionated).
   */
 
   button,
   input,
-  optgroup,
   select,
   textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 1 */
-    line-height: 1.15; /* 1 */
-    margin: 0; /* 2 */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
   }
 
   /**
-  * Show the overflow in IE.
-  * 1. Show the overflow in Edge.
+  * Remove the margin in Safari.
   */
 
   button,
-  input { /* 1 */
-    overflow: visible;
+  input,
+  select {
+    margin: 0;
   }
 
   /**
-  * Remove the inheritance of text transform in Edge, Firefox, and IE.
-  * 1. Remove the inheritance of text transform in Firefox.
+  * 1. Show the overflow in IE.
+  * 2. Remove the inheritance of text transform in Edge, Firefox, and IE.
   */
 
-  button,
-  select { /* 1 */
-    text-transform: none;
+  button {
+    overflow: visible; /* 1 */
+    text-transform: none; /* 2 */
   }
 
   /**
@@ -194,33 +310,10 @@ export default css`
   */
 
   button,
-  [type="button"],
-  [type="reset"],
-  [type="submit"] {
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
     -webkit-appearance: button;
-  }
-
-  /**
-  * Remove the inner border and padding in Firefox.
-  */
-
-  button::-moz-focus-inner,
-  [type="button"]::-moz-focus-inner,
-  [type="reset"]::-moz-focus-inner,
-  [type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-  }
-
-  /**
-  * Restore the focus styles unset by the previous rule.
-  */
-
-  button:-moz-focusring,
-  [type="button"]:-moz-focusring,
-  [type="reset"]:-moz-focusring,
-  [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
   }
 
   /**
@@ -232,55 +325,62 @@ export default css`
   }
 
   /**
+  * Show the overflow in Edge and IE.
+  */
+
+  input {
+    overflow: visible;
+  }
+
+  /**
   * 1. Correct the text wrapping in Edge and IE.
   * 2. Correct the color inheritance from fieldset elements in IE.
-  * 3. Remove the padding so developers are not caught out when they zero out
-  *    fieldset elements in all browsers.
   */
 
   legend {
-    box-sizing: border-box; /* 1 */
     color: inherit; /* 2 */
     display: table; /* 1 */
     max-width: 100%; /* 1 */
-    padding: 0; /* 3 */
     white-space: normal; /* 1 */
   }
 
   /**
-  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+  * 1. Add the correct display in Edge and IE.
+  * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
   */
 
   progress {
-    vertical-align: baseline;
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
   }
 
   /**
-  * Remove the default vertical scrollbar in IE 10+.
+  * Remove the inheritance of text transform in Firefox.
+  */
+
+  select {
+    text-transform: none;
+  }
+
+  /**
+  * 1. Remove the margin in Firefox and Safari.
+  * 2. Remove the default vertical scrollbar in IE.
+  * 3. Change the resize direction on textareas in all browsers (opinionated).
   */
 
   textarea {
-    overflow: auto;
+    margin: 0; /* 1 */
+    overflow: auto; /* 2 */
+    resize: vertical; /* 3 */
   }
 
   /**
-  * 1. Add the correct box sizing in IE 10.
-  * 2. Remove the padding in IE 10.
+  * Remove the padding in IE 10-.
   */
 
-  [type="checkbox"],
-  [type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
-  }
-
-  /**
-  * Correct the cursor style of increment and decrement buttons in Chrome.
-  */
-
-  [type="number"]::-webkit-inner-spin-button,
-  [type="number"]::-webkit-outer-spin-button {
-    height: auto;
+  [type='checkbox'],
+  [type='radio'] {
+    padding: 0;
   }
 
   /**
@@ -288,16 +388,34 @@ export default css`
   * 2. Correct the outline style in Safari.
   */
 
-  [type="search"] {
+  [type='search'] {
     -webkit-appearance: textfield; /* 1 */
     outline-offset: -2px; /* 2 */
+  }
+
+  /**
+  * Correct the cursor style of increment and decrement buttons in Safari.
+  */
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  /**
+  * Correct the text style of placeholders in Chrome, Edge, and Safari.
+  */
+
+  ::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
   }
 
   /**
   * Remove the inner padding in Chrome and Safari on macOS.
   */
 
-  [type="search"]::-webkit-search-decoration {
+  ::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 
@@ -311,15 +429,58 @@ export default css`
     font: inherit; /* 2 */
   }
 
+  /**
+  * Remove the inner border and padding of focus outlines in Firefox.
+  */
+
+  ::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  /**
+  * Restore the focus outline styles unset by the previous rule in Firefox.
+  */
+
+  :-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+
   /* Interactive
-    ========================================================================== */
+  * ========================================================================== */
 
   /*
-  * Add the correct display in Edge, IE 10+, and Firefox.
+  * Add the correct display in Edge and IE.
   */
 
   details {
     display: block;
+  }
+
+  /*
+  * Add the correct styles in Edge, IE, and Safari.
+  */
+
+  dialog {
+    background-color: white;
+    border: solid;
+    color: black;
+    display: block;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    left: 0;
+    margin: auto;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+
+  dialog:not([open]) {
+    display: none;
   }
 
   /*
@@ -330,26 +491,105 @@ export default css`
     display: list-item;
   }
 
-  /* Misc
-    ========================================================================== */
+  /* Scripting
+  * ========================================================================== */
 
   /**
-  * Add the correct display in IE 10+.
+  * Add the correct display in IE 9-.
+  */
+
+  canvas {
+    display: inline-block;
+  }
+
+  /**
+  * Add the correct display in IE.
   */
 
   template {
     display: none;
   }
 
+  /* User interaction
+  * ========================================================================== */
+
+  /*
+  * 1. Remove the tapping delay in IE 10.
+  * 2. Remove the tapping delay on clickable elements
+       in all browsers (opinionated).
+  */
+
+  a,
+  area,
+  button,
+  input,
+  label,
+  select,
+  summary,
+  textarea,
+  [tabindex] {
+    -ms-touch-action: manipulation; /* 1 */
+    touch-action: manipulation; /* 2 */
+  }
+
   /**
-  * Add the correct display in IE 10.
+  * Add the correct display in IE 10-.
   */
 
   [hidden] {
     display: none;
   }
 
-  *, *::after, *::before {
-    box-sizing: border-box;
+  /* Accessibility
+  * ========================================================================== */
+
+  /**
+  * Change the cursor on busy elements in all browsers (opinionated).
+  */
+
+  [aria-busy='true'] {
+    cursor: progress;
+  }
+
+  /*
+  * Change the cursor on control elements in all browsers (opinionated).
+  */
+
+  [aria-controls] {
+    cursor: pointer;
+  }
+
+  /*
+  * Change the cursor on disabled, not-editable, or otherwise
+  * inoperable elements in all browsers (opinionated).
+  */
+
+  [aria-disabled='true'],
+  [disabled] {
+    cursor: not-allowed;
+  }
+
+  /*
+  * Change the display on visually hidden accessible elements
+  * in all browsers (opinionated).
+  */
+
+  [aria-hidden='false'][hidden]:not(:focus) {
+    clip: rect(0, 0, 0, 0);
+    display: inherit;
+    position: absolute;
+  }
+
+  /* Custom */
+  *,
+  *,
+  ::before,
+  ::after {
+    font-size: 14px;
+    color: ${theme.colors.base};
+  }
+
+  a {
+    color: ${theme.colors.primary};
   }
 `
