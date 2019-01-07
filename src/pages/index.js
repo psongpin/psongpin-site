@@ -8,12 +8,9 @@ import 'react-typist/dist/Typist.css'
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
+import { Content } from '../components/common'
 
-const Content = styled.div`
-  width: 795px;
-  margin: 0 auto;
-  padding: 60px 15px;
-  min-height: calc(100vh - 160px);
+const CustomContent = styled(Content)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,22 +32,27 @@ const TypistText = styled.h1`
   }
 `
 
-const Button = styled.button`
-  color: ${props => props.theme.colors.mainBackground};
-  background-color: ${props => props.theme.colors.primary};
-  height: 60px;
-  width: 400px;
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-  border: 0;
-  display: inline-block;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
+const ButtonLink = styled(Link)`
+  max-width: 100%;
 
-  &:hover {
-    opacity: 0.6;
+  button {
+    color: ${props => props.theme.colors.mainBackground};
+    background-color: ${props => props.theme.colors.primary};
+    height: 60px;
+    width: 400px;
+    max-width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    border: 0;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 `
 const LearnMoreLink = styled(Link)`
@@ -75,7 +77,7 @@ const IndexPage = () => (
         `react`,
       ]}
     />
-    <Content>
+    <CustomContent width="800px">
       <TypistText>
         <Typist>
           {`I build `}
@@ -101,14 +103,14 @@ const IndexPage = () => (
           {'.'}
         </Typist>
       </TypistText>
-      <Link to="/contact">
-        <Button type="button">
+      <ButtonLink to="/contact">
+        <button type="button">
           {`Let's work together! `}
           <Icon icon={faArrowRight} />
-        </Button>
-      </Link>
+        </button>
+      </ButtonLink>
       <LearnMoreLink to="/about">Learn more about me</LearnMoreLink>
-    </Content>
+    </CustomContent>
   </Layout>
 )
 
