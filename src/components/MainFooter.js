@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import Test from './common'
+import { PrimaryText } from './common'
 
 const Footer = styled.footer`
   min-height: 60px;
@@ -23,19 +23,19 @@ const MainFooter = () => (
       <span role="img" aria-label="heart">
         ❤️
       </span>
-      {`by `}
-      <Test.PrimaryText>Paul Simon Ongpin</Test.PrimaryText>
+      {` by `}
+      <PrimaryText>Paul Simon Ongpin</PrimaryText>
       {` using `}
       <a
         href="https://www.gatsbyjs.org/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Test.PrimaryText>Gatsby</Test.PrimaryText>
+        <PrimaryText>Gatsby</PrimaryText>
       </a>
       {` and `}
       <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
-        <Test.PrimaryText>React</Test.PrimaryText>
+        <PrimaryText>React</PrimaryText>
       </a>
       {`.`}
     </p>

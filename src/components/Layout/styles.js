@@ -585,6 +585,7 @@ export default css`
   *,
   ::before,
   ::after {
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     color: ${theme.colors.base};
   }

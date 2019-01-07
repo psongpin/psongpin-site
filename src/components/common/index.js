@@ -1,3 +1,4 @@
 import PrimaryText from './PrimaryText'
 
-export default { PrimaryText }
+// eslint-disable-next-line
+export { PrimaryText }
