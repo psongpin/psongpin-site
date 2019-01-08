@@ -55,7 +55,7 @@ const ParagraphContainer = styled.div`
 const Contact = () => (
   <Layout>
     <SEO title="Contact" />
-    <CustomContent width="800px">
+    <CustomContent>
       <div>
         <TypistText>
           <Typist cursor={{ hideWhenDone: true }}>

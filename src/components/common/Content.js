@@ -9,7 +9,7 @@ const Content = styled.div`
 `
 
 Content.defaultProps = {
-  width: '100%',
+  width: '800px',
 }
 
 export default Content

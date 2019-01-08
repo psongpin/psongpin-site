@@ -106,7 +106,7 @@ const skills = {
 const About = () => (
   <Layout>
     <SEO title="About" />
-    <Content width="800px">
+    <Content>
       <Profile
         name="Paul Simon Ongpin"
         title="Front-end Developer, Engineer, Programmer, Coder, whatever..."

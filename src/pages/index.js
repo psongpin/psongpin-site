@@ -77,7 +77,7 @@ const IndexPage = () => (
         `react`,
       ]}
     />
-    <CustomContent width="800px">
+    <CustomContent>
       <TypistText>
         <Typist cursor={{ hideWhenDone: true }}>
           {`I build `}
