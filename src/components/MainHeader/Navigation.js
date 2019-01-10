@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
@@ -13,7 +14,7 @@ const NavBar = styled.nav`
       display: block;
       text-decoration: none;
       color: ${props => props.theme.colors.base};
-      font-size: 20px;
+      font-size: ${props => (props.isScrolled ? '16px' : '20px')};
       font-weight: bold;
       padding: 0 15px;
       line-height: 2em;
@@ -28,8 +29,8 @@ const NavBar = styled.nav`
   }
 `
 
-const Navigation = () => (
-  <NavBar>
+const Navigation = ({ isScrolled }) => (
+  <NavBar isScrolled={isScrolled}>
     <ul>
       <li>
         <Link to="/" activeClassName="active">
@@ -54,5 +55,9 @@ const Navigation = () => (
     </ul>
   </NavBar>
 )
+
+Navigation.propTypes = {
+  isScrolled: PropTypes.bool.isRequired,
+}
 
 export default Navigation
