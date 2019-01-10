@@ -10,7 +10,7 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 15px;
+  padding: 0 ${props => props.theme.contentPadding};
 
   > div {
     width: 1200px;

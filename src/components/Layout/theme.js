@@ -5,6 +5,7 @@ const theme = {
     base: '#BFBFBF',
     highlighted: '#969696',
   },
+  contentPadding: '1.429rem',
 }
 
 export default theme

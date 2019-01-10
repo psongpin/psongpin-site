@@ -131,7 +131,7 @@ const About = () => (
         <p>For personal things, I:</p>
         <ul>
           {personalStuff.map(stuff => (
-            <li>
+            <li key={stuff}>
               <p>{stuff}</p>
             </li>
           ))}

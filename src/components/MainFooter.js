@@ -5,7 +5,7 @@ import { PrimaryText } from './common'
 
 const Footer = styled.footer`
   min-height: 60px;
-  padding: 0 15px;
+  padding: 0 ${props => props.theme.contentPadding};
   display: flex;
   align-items: center;
   justify-content: center;
