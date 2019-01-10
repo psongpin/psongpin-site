@@ -18,10 +18,13 @@ const CustomContent = styled(Content)`
 `
 
 const TypistText = styled.h1`
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 900;
   text-align: center;
   margin: 0 0 60px 0;
+  ${props => props.theme.mq[1]} {
+    font-size: 64px;
+  }
 
   span:not(.Cursor) {
     color: ${props => props.theme.colors.primary};
@@ -41,7 +44,7 @@ const ButtonLink = styled(Link)`
     height: 60px;
     width: 400px;
     max-width: 100%;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
     text-align: center;
     border: 0;
@@ -49,6 +52,9 @@ const ButtonLink = styled(Link)`
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+    ${props => props.theme.mq[1]} {
+      font-size: 24px;
+    }
 
     &:hover {
       opacity: 0.6;
