@@ -33,6 +33,9 @@ const Header = styled.header`
 
 const Hamburger = styled.button`
   font-size: 24px;
+  background: transparent;
+  border: none;
+  padding: 0 15px;
   color: ${props => props.theme.colors.highlighted};
   ${props => props.theme.mq[1]} {
     display: none;

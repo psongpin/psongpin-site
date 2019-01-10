@@ -82,6 +82,9 @@ const NavOverlay = styled.div`
 const Close = styled.button`
   font-size: 24px;
   color: ${props => props.theme.colors.highlighted};
+  background: transparent;
+  border: none;
+  padding: 0 15px;
   position: absolute;
   right: 20px;
   top: 30px;
