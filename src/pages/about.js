@@ -23,10 +23,12 @@ const SkillsGroup = styled.div`
 
   ul {
     margin: 0;
+    flex-basis: 50%;
   }
 `
 
 const SkillGroupTitle = styled.h3`
+  font-size: 18px;
   margin-bottom: 0;
   color: ${props => props.theme.colors.highlighted};
 `

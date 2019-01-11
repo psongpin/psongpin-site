@@ -22,6 +22,7 @@ const Title = styled.p`
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 0;
+  text-align: center;
 `
 
 const Profile = ({ name, title }) => (
