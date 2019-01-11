@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
+import { keyframes } from '@emotion/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Typist from 'react-typist'
@@ -35,6 +36,24 @@ const TypistText = styled.h1`
   }
 `
 
+const shake = keyframes`
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+`
+
 const ButtonLink = styled(Link)`
   max-width: 100%;
 
@@ -52,6 +71,7 @@ const ButtonLink = styled(Link)`
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+    animation: ${shake} 1.5s infinite;
     ${props => props.theme.mq[1]} {
       font-size: 24px;
     }
