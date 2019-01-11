@@ -61,7 +61,7 @@ const Contact = () => (
     <CustomContent>
       <div>
         <TypistText>
-          <Typist cursor={{ hideWhenDone: true }}>
+          <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}>
             {`Oohh! So you're interested?`}
             <Typist.Backspace count={27} delay={800} />
             {`Let's have a chat!`}

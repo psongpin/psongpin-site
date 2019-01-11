@@ -105,7 +105,7 @@ const IndexPage = () => (
     />
     <CustomContent>
       <TypistText>
-        <Typist cursor={{ hideWhenDone: true }}>
+        <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}>
           {`I build `}
           <span>websites</span>
           {'.'}
