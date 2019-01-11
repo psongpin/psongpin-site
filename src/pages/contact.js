@@ -10,6 +10,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Content, PrimaryText } from '../components/common'
+import mq from '../utils/breakpoints'
 
 const CustomContent = styled(Content)`
   display: flex;
@@ -20,7 +21,7 @@ const TypistText = styled.h1`
   font-size: 36px;
   font-weight: 900;
   margin: 0;
-  ${props => props.theme.mq[1]} {
+  ${mq[1]} {
     font-size: 48px;
   }
 

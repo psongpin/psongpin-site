@@ -7,6 +7,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import Avatar from '../Avatar'
 import Navigation from './Navigation'
+import mq from '../../utils/breakpoints'
 
 const Header = styled.header`
   height: ${props => (props.isScrolled ? '70px' : '100px')};
@@ -37,7 +38,7 @@ const Hamburger = styled.button`
   border: none;
   padding: 0 15px;
   color: ${props => props.theme.colors.highlighted};
-  ${props => props.theme.mq[1]} {
+  ${mq[1]} {
     display: none;
   }
 `

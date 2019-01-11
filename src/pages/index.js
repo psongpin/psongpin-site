@@ -10,6 +10,7 @@ import 'react-typist/dist/Typist.css'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Content } from '../components/common'
+import mq from '../utils/breakpoints'
 
 const CustomContent = styled(Content)`
   display: flex;
@@ -23,7 +24,7 @@ const TypistText = styled.h1`
   font-weight: 900;
   text-align: center;
   margin: 0 0 60px 0;
-  ${props => props.theme.mq[1]} {
+  ${mq[1]} {
     font-size: 64px;
   }
 
@@ -72,7 +73,7 @@ const ButtonLink = styled(Link)`
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     animation: ${shake} 1.5s infinite;
-    ${props => props.theme.mq[1]} {
+    ${mq[1]} {
       font-size: 24px;
     }
 

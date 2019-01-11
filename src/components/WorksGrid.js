@@ -4,11 +4,16 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
 import { PrimaryText } from './common'
+import mq from '../utils/breakpoints'
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15px;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+  ${mq[1]} {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
 `
 
 const GridItem = styled.div`
@@ -19,35 +24,49 @@ const GridItem = styled.div`
   background-position: top left;
   position: relative;
   border: 1px solid ${props => props.theme.colors.base};
+  padding-top: 250px;
+  margin-bottom: 3rem;
+  ${mq[1]} {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
 
   & > div {
-    background: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: all 0.2s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    padding-top: 1rem;
+    ${mq[1]} {
+      background: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     a {
-      color: ${props => props.theme.colors.mainBackground};
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 18px;
-      background-color: ${props => props.theme.colors.primary};
-      padding: 0 1.5em;
-      line-height: 2.5em;
-      text-align: center;
-      border-radius: 5px;
+      ${mq[1]} {
+        color: ${props => props.theme.colors.mainBackground};
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        background-color: ${props => props.theme.colors.primary};
+        padding: 0 1.5em;
+        line-height: 2.5em;
+        text-align: center;
+        border-radius: 5px;
+      }
 
       &:hover {
-        opacity: 0.6;
+        ${mq[1]} {
+          opacity: 0.6;
+        }
       }
     }
   }
@@ -85,7 +104,9 @@ const WorksGrid = ({ works }) => (
     {works.map(work => (
       <GridItem key={work.name} img={work.img}>
         <div>
-          <a href={work.link}>Visit site</a>
+          <a href={work.link}>
+            <span>{work.name}</span>
+          </a>
         </div>
       </GridItem>
     ))}

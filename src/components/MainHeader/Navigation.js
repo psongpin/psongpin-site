@@ -5,6 +5,8 @@ import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
+import mq from '../../utils/breakpoints'
+
 const NavBar = styled.nav`
   position: fixed;
   z-index: 9999;
@@ -15,7 +17,7 @@ const NavBar = styled.nav`
   background: ${props => props.theme.colors.mainBackground};
   transform: translateX(${props => (props.isNavVisible ? '0%' : '100%')});
   transition: all 0.2s ease-in-out;
-  ${props => props.theme.mq[1]} {
+  ${mq[1]} {
     position: static;
     height: auto;
     width: auto;
@@ -29,7 +31,7 @@ const NavBar = styled.nav`
     display: flex;
     flex-direction: column;
     text-align: center;
-    ${props => props.theme.mq[1]} {
+    ${mq[1]} {
       margin: 0;
       flex-direction: row;
     }
@@ -44,7 +46,7 @@ const NavBar = styled.nav`
       line-height: 3em;
       transition: all 0.2s ease-in-out;
 
-      ${props => props.theme.mq[1]} {
+      ${mq[1]} {
         font-size: ${props => (props.isScrolled ? '16px' : '20px')};
         line-height: 2em;
       }
@@ -54,7 +56,7 @@ const NavBar = styled.nav`
       &:focus {
         color: ${props => props.theme.colors.primary};
         box-shadow: inset 12px 0 0px -7px ${props => props.theme.colors.primary};
-        ${props => props.theme.mq[1]} {
+        ${mq[1]} {
           box-shadow: none;
         }
       }
@@ -74,7 +76,7 @@ const NavOverlay = styled.div`
   height: 100vh;
   background-color: ${props => props.theme.colors.highlighted};
   opacity: 0.6;
-  ${props => props.theme.mq[1]} {
+  ${mq[1]} {
     display: none;
   }
 `
@@ -88,7 +90,7 @@ const Close = styled.button`
   position: absolute;
   right: 20px;
   top: 30px;
-  ${props => props.theme.mq[1]} {
+  ${mq[1]} {
     display: none;
   }
 `
