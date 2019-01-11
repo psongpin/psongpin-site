@@ -17,9 +17,12 @@ const CustomContent = styled(Content)`
 `
 
 const TypistText = styled.h1`
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 900;
   margin: 0;
+  ${props => props.theme.mq[1]} {
+    font-size: 48px;
+  }
 
   .Cursor {
     font-weight: 400;
