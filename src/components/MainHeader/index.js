@@ -15,9 +15,11 @@ const Header = styled.header`
   align-items: center;
   justify-content: center;
   padding: 0 ${props => props.theme.contentPadding};
-  position: sticky;
+  position: fixed;
   z-index: 9999;
   top: 0;
+  left: 0;
+  right: 0;
   background-color: ${props => props.theme.colors.mainBackground};
   box-shadow: ${props =>
     props.isScrolled && `0px 0px 10px ${props.theme.colors.highlighted}`};
@@ -54,7 +56,7 @@ class MainHeader extends Component {
     return (
       <Scroll
         render={({ y }) => {
-          const isScrolled = y > 60
+          const isScrolled = y > 0
           const avatarDimension = isScrolled ? '40px' : '60px'
 
           return (
