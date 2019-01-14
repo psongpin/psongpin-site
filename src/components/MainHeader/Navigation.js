@@ -104,22 +104,26 @@ const Navigation = ({ isScrolled, isNavVisible, toggleNavigation }) => (
       </Close>
       <ul>
         <li>
-          <Link to="/" activeClassName="active">
+          <Link to="/" activeClassName="active" onClick={toggleNavigation}>
             Home
           </Link>
         </li>
         <li>
-          <Link to="/about" activeClassName="active">
+          <Link to="/about" activeClassName="active" onClick={toggleNavigation}>
             About
           </Link>
         </li>
         <li>
-          <Link to="/works" activeClassName="active">
+          <Link to="/works" activeClassName="active" onClick={toggleNavigation}>
             Works
           </Link>
         </li>
         <li>
-          <Link to="/contact" activeClassName="active">
+          <Link
+            to="/contact"
+            activeClassName="active"
+            onClick={toggleNavigation}
+          >
             Contact
           </Link>
         </li>
