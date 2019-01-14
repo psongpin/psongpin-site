@@ -22,6 +22,7 @@ const NavBar = styled.nav`
     height: auto;
     width: auto;
     transform: none;
+    order: 1;
   }
 
   ul {

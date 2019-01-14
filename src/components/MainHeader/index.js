@@ -47,6 +47,7 @@ const Hamburger = styled.button`
   border: none;
   padding: 0 15px;
   color: ${props => props.theme.colors.highlighted};
+  order: 2;
   ${mq[1]} {
     display: none;
   }
