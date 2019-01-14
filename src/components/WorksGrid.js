@@ -84,6 +84,10 @@ const InfoGrid = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  a {
+    color: ${props => props.theme.colors.primary};
+  }
 `
 
 const infoStyles = {

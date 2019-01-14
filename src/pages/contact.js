@@ -15,6 +15,10 @@ import mq from '../utils/breakpoints'
 const CustomContent = styled(Content)`
   display: flex;
   align-items: center;
+
+  a {
+    color: ${props => props.theme.colors.primary};
+  }
 `
 
 const TypistText = styled.h1`

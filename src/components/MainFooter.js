@@ -14,6 +14,10 @@ const Footer = styled.footer`
   p {
     margin: 0;
   }
+
+  a {
+    color: ${props => props.theme.colors.primary};
+  }
 `
 
 const MainFooter = () => (
@@ -31,11 +35,11 @@ const MainFooter = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <PrimaryText>Gatsby</PrimaryText>
+        Gatsby
       </a>
       {` and `}
       <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
-        <PrimaryText>React</PrimaryText>
+        React
       </a>
       {`.`}
     </p>
