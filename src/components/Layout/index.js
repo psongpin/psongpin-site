@@ -18,11 +18,16 @@ const Wrapper = styled.div`
 `
 
 class Layout extends Component {
-  state = { theme: localStorage.getItem('theme') || 'light' }
+  state = {
+    theme:
+      (typeof window !== `undefined` && window.localStorage.getItem('theme')) ||
+      'light',
+  }
 
   onChangeTheme = theme =>
     this.setState(() => {
-      localStorage.setItem('theme', theme)
+      if (typeof window !== `undefined`)
+        window.localStorage.setItem('theme', theme)
       return { theme }
     })
 

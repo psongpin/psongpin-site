@@ -51,6 +51,7 @@ const GridItem = styled.div`
     }
 
     a {
+      color: ${props => props.theme.colors.primary};
       ${mq[1]} {
         color: ${props => props.theme.colors.mainBackground};
         text-decoration: none;
