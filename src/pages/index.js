@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/core'
@@ -7,7 +7,6 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Typist from 'react-typist'
 import 'react-typist/dist/Typist.css'
 
-import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Content } from '../components/common'
 import mq from '../utils/breakpoints'
@@ -93,7 +92,7 @@ const Icon = styled(FontAwesomeIcon)`
 `
 
 const IndexPage = () => (
-  <Layout>
+  <Fragment>
     <SEO
       title="Home"
       keywords={[
@@ -138,7 +137,7 @@ const IndexPage = () => (
       </ButtonLink>
       <LearnMoreLink to="/about">Learn more about me</LearnMoreLink>
     </CustomContent>
-  </Layout>
+  </Fragment>
 )
 
 export default IndexPage

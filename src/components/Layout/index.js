@@ -19,21 +19,11 @@ const Wrapper = styled.div`
 
 class Layout extends Component {
   state = {
-    theme:
-      (typeof window !== `undefined` && window.localStorage.getItem('theme')) ||
-      'light',
+    theme: 'light',
   }
 
   componentDidMount() {
-    window.addEventListener('beforeunload', this.onUnload)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('beforeunload', this.onUnload)
-  }
-
-  onUnload = () => {
-    if (typeof window !== `undefined`) window.localStorage.removeItem('theme')
+    this.setState({ theme: window.localStorage.getItem('theme') || 'light' })
   }
 
   onChangeTheme = theme =>

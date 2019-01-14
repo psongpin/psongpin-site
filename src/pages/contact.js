@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -7,7 +7,6 @@ import Typist from 'react-typist'
 import 'react-typist/dist/Typist.css'
 import { Link } from 'gatsby'
 
-import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Content, PrimaryText } from '../components/common'
 import mq from '../utils/breakpoints'
@@ -61,7 +60,7 @@ const ParagraphContainer = styled.div`
 `
 
 const Contact = () => (
-  <Layout>
+  <Fragment>
     <SEO title="Contact" />
     <CustomContent>
       <div>
@@ -115,7 +114,7 @@ const Contact = () => (
         </ParagraphContainer>
       </div>
     </CustomContent>
-  </Layout>
+  </Fragment>
 )
 
 export default Contact

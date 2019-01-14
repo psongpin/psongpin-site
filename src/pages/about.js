@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
 
-import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Content, PrimaryText } from '../components/common'
 import Profile from '../components/Profile'
@@ -106,7 +105,7 @@ const skills = {
 }
 
 const About = () => (
-  <Layout>
+  <Fragment>
     <SEO title="About" />
     <Content>
       <Profile
@@ -193,7 +192,7 @@ const About = () => (
         </SkillsGroup>
       </Section>
     </Content>
-  </Layout>
+  </Fragment>
 )
 
 export default About

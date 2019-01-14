@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from '@emotion/styled'
 
-import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Content } from '../components/common'
 import WorksGrid from '../components/WorksGrid'
@@ -23,13 +22,13 @@ const works = [
 ]
 
 const Works = () => (
-  <Layout>
+  <Fragment>
     <SEO title="Works" />
     <Content>
       <Heading>Here are some of my published works!</Heading>
       <WorksGrid works={works} />
     </Content>
-  </Layout>
+  </Fragment>
 )
 
 export default Works
