@@ -1,7 +1,5 @@
 import { css } from '@emotion/core'
 
-import theme from './theme'
-
 export default css`
   /*! sanitize.css v8.0.0 | CC0 License | github.com/csstools/sanitize.css */
 
@@ -585,11 +583,6 @@ export default css`
   body {
     font-family: 'Lato', sans-serif;
     font-size: 14px;
-    color: ${theme.colors.base};
-  }
-
-  a {
-    color: ${theme.colors.primary};
   }
 
   p {

@@ -7,6 +7,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import Avatar from '../Avatar'
 import Navigation from './Navigation'
+import ThemeSwitch from '../ThemeSwitch'
 import mq from '../../utils/breakpoints'
 
 const Header = styled.header`
@@ -22,7 +23,7 @@ const Header = styled.header`
   right: 0;
   background-color: ${props => props.theme.colors.mainBackground};
   box-shadow: ${props =>
-    props.isScrolled && `0px 0px 10px ${props.theme.colors.highlighted}`};
+    props.isScrolled && `0px 0px 10px ${props.theme.colors.headerShadow}`};
   transition: all 0.2s ease-in-out;
 
   > div {
@@ -32,6 +33,12 @@ const Header = styled.header`
     justify-content: space-between;
     align-items: center;
   }
+`
+
+const NavWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const Hamburger = styled.button`
@@ -53,6 +60,8 @@ class MainHeader extends Component {
 
   render() {
     const { isNavVisible } = this.state
+    const { onChangeTheme, theme } = this.props
+
     return (
       <Scroll
         render={({ y }) => {
@@ -65,14 +74,17 @@ class MainHeader extends Component {
                 <Link to="/">
                   <Avatar width={avatarDimension} height={avatarDimension} />
                 </Link>
-                <Navigation
-                  isScrolled={isScrolled}
-                  isNavVisible={isNavVisible}
-                  toggleNavigation={this.toggleNavigation}
-                />
-                <Hamburger onClick={this.toggleNavigation}>
-                  <FontAwesomeIcon icon={faBars} />
-                </Hamburger>
+                <NavWrapper>
+                  <Navigation
+                    isScrolled={isScrolled}
+                    isNavVisible={isNavVisible}
+                    toggleNavigation={this.toggleNavigation}
+                  />
+                  <Hamburger onClick={this.toggleNavigation}>
+                    <FontAwesomeIcon icon={faBars} />
+                  </Hamburger>
+                  <ThemeSwitch onChangeTheme={onChangeTheme} theme={theme} />
+                </NavWrapper>
               </div>
             </Header>
           )
