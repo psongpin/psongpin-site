@@ -24,6 +24,18 @@ class Layout extends Component {
       'light',
   }
 
+  componentDidMount() {
+    window.addEventListener('beforeunload', this.onUnload)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.onUnload)
+  }
+
+  onUnload = () => {
+    if (typeof window !== `undefined`) window.localStorage.removeItem('theme')
+  }
+
   onChangeTheme = theme =>
     this.setState(() => {
       if (typeof window !== `undefined`)
