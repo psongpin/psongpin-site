@@ -1,5 +1,7 @@
 ## Paul Simon Ongpin - Personal Website
 
+link: https://psongpin.netlify.com/
+
 ### Libraries used
 - Gatsby
 - React
