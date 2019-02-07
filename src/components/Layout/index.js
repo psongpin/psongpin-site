@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Global } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
@@ -17,48 +17,48 @@ const Wrapper = styled.div`
   color: ${props => props.theme.colors.base};
 `
 
-class Layout extends Component {
-  state = {
-    theme: 'light',
+const useThemeSwitcher = () => {
+  const [theme, setTheme] = useState('light')
+
+  const onChangeTheme = selectedTheme => {
+    if (typeof window !== `undefined`) {
+      window.localStorage.setItem('theme', selectedTheme)
+      setTheme(selectedTheme)
+    }
   }
 
-  componentDidMount() {
-    this.setState({ theme: window.localStorage.getItem('theme') || 'light' })
-  }
-
-  onChangeTheme = theme =>
-    this.setState(() => {
-      if (typeof window !== `undefined`)
-        window.localStorage.setItem('theme', theme)
-      return { theme }
-    })
-
-  render() {
-    const { children } = this.props
-    const { theme } = this.state
-    return (
-      <ThemeProvider theme={themes[theme]}>
-        <Fragment>
-          <Global styles={globalStyles} />
-          <Scroll
-            render={({ y }) => {
-              const isScrolled = y > 0
-              return (
-                <Wrapper isScrolled={isScrolled}>
-                  <MainHeader
-                    onChangeTheme={this.onChangeTheme}
-                    theme={theme}
-                  />
-                  <main>{children}</main>
-                  <MainFooter />
-                </Wrapper>
-              )
-            }}
-          />
-        </Fragment>
-      </ThemeProvider>
+  const useThemeEffect = () => {
+    useEffect(
+      () => setTheme(window.localStorage.getItem('theme') || 'light'),
+      []
     )
   }
+
+  return { theme, onChangeTheme, useThemeEffect }
+}
+
+const Layout = ({ children }) => {
+  const { theme, onChangeTheme, useThemeEffect } = useThemeSwitcher()
+  useThemeEffect()
+  return (
+    <ThemeProvider theme={themes[theme]}>
+      <Fragment>
+        <Global styles={globalStyles} />
+        <Scroll
+          render={({ y }) => {
+            const isScrolled = y > 0
+            return (
+              <Wrapper isScrolled={isScrolled}>
+                <MainHeader onChangeTheme={onChangeTheme} theme={theme} />
+                <main>{children}</main>
+                <MainFooter />
+              </Wrapper>
+            )
+          }}
+        />
+      </Fragment>
+    </ThemeProvider>
+  )
 }
 
 Layout.propTypes = {

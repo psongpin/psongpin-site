@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { Scroll } from 'react-fns'
@@ -53,46 +53,47 @@ const Hamburger = styled.button`
   }
 `
 
-class MainHeader extends Component {
-  state = { isNavVisible: false }
+const useNav = () => {
+  const [isNavVisible, setIsNavVisible] = useState(false)
 
-  toggleNavigation = () =>
-    this.setState(state => ({ isNavVisible: !state.isNavVisible }))
+  const toggleNavigation = () => setIsNavVisible(!isNavVisible)
 
-  render() {
-    const { isNavVisible } = this.state
-    const { onChangeTheme, theme } = this.props
-
-    return (
-      <Scroll
-        render={({ y }) => {
-          const isScrolled = y > 0
-          const avatarDimension = isScrolled ? '40px' : '60px'
-
-          return (
-            <Header isScrolled={isScrolled}>
-              <div>
-                <Link to="/">
-                  <Avatar width={avatarDimension} height={avatarDimension} />
-                </Link>
-                <NavWrapper>
-                  <Navigation
-                    isScrolled={isScrolled}
-                    isNavVisible={isNavVisible}
-                    toggleNavigation={this.toggleNavigation}
-                  />
-                  <Hamburger onClick={this.toggleNavigation}>
-                    <FontAwesomeIcon icon={faBars} />
-                  </Hamburger>
-                  <ThemeSwitch onChangeTheme={onChangeTheme} theme={theme} />
-                </NavWrapper>
-              </div>
-            </Header>
-          )
-        }}
-      />
-    )
-  }
+  return { isNavVisible, toggleNavigation }
 }
+
+const MainHeader = ({ onChangeTheme, theme }) => {
+  const { isNavVisible, toggleNavigation } = useNav()
+
+  return (
+    <Scroll
+      render={({ y }) => {
+        const isScrolled = y > 0
+        const avatarDimension = isScrolled ? '40px' : '60px'
+
+        return (
+          <Header isScrolled={isScrolled}>
+            <div>
+              <Link to="/">
+                <Avatar width={avatarDimension} height={avatarDimension} />
+              </Link>
+              <NavWrapper>
+                <Navigation
+                  isScrolled={isScrolled}
+                  isNavVisible={isNavVisible}
+                  toggleNavigation={toggleNavigation}
+                />
+                <Hamburger onClick={toggleNavigation}>
+                  <FontAwesomeIcon icon={faBars} />
+                </Hamburger>
+                <ThemeSwitch onChangeTheme={onChangeTheme} theme={theme} />
+              </NavWrapper>
+            </div>
+          </Header>
+        )
+      }}
+    />
+  )
+}
+// }
 
 export default MainHeader

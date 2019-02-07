@@ -24,8 +24,8 @@
     "gatsby-transformer-sharp": "^2.1.8",
     "polished": "^2.3.3",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "react-fns": "^1.4.0",
     "react-helmet": "^5.2.0",
     "react-typist": "^2.0.5"
@@ -49,6 +49,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.3",
+    "eslint-plugin-react-hooks": "^1.0.1",
     "prettier": "^1.15.3"
   },
   "repository": {
