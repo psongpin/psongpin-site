@@ -37,19 +37,19 @@ const TypistText = styled.h1`
 `
 
 const shake = keyframes`
-  10%, 90% {
+  5%, 45% {
     transform: translate3d(-1px, 0, 0);
   }
   
-  20%, 80% {
+  10%, 40% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  15%, 25%, 35% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  20%, 30% {
     transform: translate3d(4px, 0, 0);
   }
 `
@@ -71,7 +71,7 @@ const ButtonLink = styled(Link)`
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-    animation: ${shake} 1.5s infinite;
+    animation: ${shake} 3s infinite;
     ${mq[1]} {
       font-size: 24px;
     }
