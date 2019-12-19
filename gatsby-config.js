@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Paul Simon Ongpin's Personal Website`,
-    description: `Paul Simon Ongpin, a Front-end Developer, builds aesthetic and performant websites and web applications for your business or personal needs.`,
-    author: `Paul Simon Ongpin`,
+    title: `Gatsby Default Starter`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,31 +18,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `paul-simon-ongpin-website`,
-        short_name: `paul-ongpin-site`,
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
         start_url: `/`,
-        background_color: `#FFFFFF`,
-        theme_color: `#FF3B3F`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Lato:400,400i,700,700i,900'],
-        },
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ],
 }
