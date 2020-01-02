@@ -14,7 +14,7 @@ const theme = {
     colors: {
       primary: "#FFDC12",
       mainBackground: "#292929",
-      base: "#FFFFFF",
+      base: "#BFBFBF",
       highlighted: "#FFFFFF",
       headerShadow: "#000000",
     },

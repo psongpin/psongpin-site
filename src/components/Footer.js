@@ -11,9 +11,11 @@ const FooterWrapper = styled.footer`
   align-items: center;
   justify-content: center;
   text-align: center;
+
   p {
     margin: 0;
   }
+
   a {
     color: ${props => props.theme.colors.primary};
   }
