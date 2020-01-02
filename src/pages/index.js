@@ -1,15 +1,12 @@
-import React, { Fragment } from 'react'
-import { Link } from 'gatsby'
-import styled from '@emotion/styled'
-import { keyframes } from '@emotion/core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import Typist from 'react-typist'
-import 'react-typist/dist/Typist.css'
+import React from "react"
+import { Link } from "gatsby"
+import styled from "styled-components"
+import Typist from "react-typist"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import SEO from '../components/seo'
-import { Content } from '../components/common'
-import mq from '../utils/breakpoints'
+import SEO from "../components/seo"
+import { Content } from "../components/common"
+import { mediaQuery } from "../theme"
 
 const CustomContent = styled(Content)`
   display: flex;
@@ -23,7 +20,7 @@ const TypistText = styled.h1`
   font-weight: 900;
   text-align: center;
   margin: 0 0 60px 0;
-  ${mq[1]} {
+  ${mediaQuery[1]} {
     font-size: 64px;
   }
 
@@ -33,24 +30,6 @@ const TypistText = styled.h1`
 
   .Cursor {
     font-weight: 400;
-  }
-`
-
-const shake = keyframes`
-  5%, 45% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  10%, 40% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  15%, 25%, 35% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  20%, 30% {
-    transform: translate3d(4px, 0, 0);
   }
 `
 
@@ -71,8 +50,7 @@ const ButtonLink = styled(Link)`
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-    animation: ${shake} 3s infinite;
-    ${mq[1]} {
+    ${mediaQuery[1]} {
       font-size: 24px;
     }
 
@@ -87,12 +65,8 @@ const LearnMoreLink = styled(Link)`
   margin-top: 26px;
 `
 
-const Icon = styled(FontAwesomeIcon)`
-  margin-left: 1rem;
-`
-
 const IndexPage = () => (
-  <Fragment>
+  <>
     <SEO
       title="Home"
       keywords={[
@@ -106,38 +80,26 @@ const IndexPage = () => (
     <CustomContent>
       <TypistText>
         <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}>
-          {`I build `}
-          <span>websites</span>
-          {'.'}
+          I build <span>websites</span>.
           <Typist.Backspace count={9} delay={800} />
-          <span>web applications</span>
-          {'.'}
-          <Typist.Backspace count={25} delay={800} />
-          {'I love '}
-          <span>React</span>
-          {' and '}
-          <span>CSS</span>
-          {'.'}
+          <span>web applications</span>.
+          <Typist.Backspace count={25} delay={800} />I love <span>React</span>{" "}
+          and <span>CSS</span>.
           <Typist.Backspace count={14} delay={800} />
-          <span>community-building</span>
-          {'.'}
-          <Typist.Backspace count={26} delay={800} />
-          {`I am `}
-          <span>Paul</span>
-          {', a '}
-          <span>front-end developer</span>
-          {'.'}
+          <span>community-building</span>.
+          <Typist.Backspace count={26} delay={800} />I am <span>Paul</span>, a{" "}
+          <span>front-end developer</span>.
         </Typist>
       </TypistText>
       <ButtonLink to="/contact">
         <button type="button">
-          {`Let's work together! `}
-          <Icon icon={faArrowRight} />
+          Let&apos;s work together!&nbsp;&nbsp;&nbsp;&nbsp;
+          <FontAwesomeIcon icon="arrow-right" />
         </button>
       </ButtonLink>
       <LearnMoreLink to="/about">Learn more about me</LearnMoreLink>
     </CustomContent>
-  </Fragment>
+  </>
 )
 
 export default IndexPage

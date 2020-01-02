@@ -4,12 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
-import React from 'react'
+import Root from "./src/root"
 
-import Layout from './src/components/Layout'
-
-// eslint-disable-next-line
-export const wrapPageElement = ({ element }) => {
-  return <Layout>{element}</Layout>
-}
+// eslint-disable-next-line import/prefer-default-export
+export const wrapPageElement = Root

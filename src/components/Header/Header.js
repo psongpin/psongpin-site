@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
-import styled from '@emotion/styled'
-import { Link } from 'gatsby'
-import { Scroll } from 'react-fns'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from "react"
+import { Scroll } from "react-fns"
+import styled from "styled-components"
+import { Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import Avatar from '../Avatar'
-import Navigation from './Navigation'
-import ThemeSwitch from '../ThemeSwitch'
-import mq from '../../utils/breakpoints'
+import Avatar from "../Avatar"
+import Navigation from "./Navigation"
+import ThemeSwitch from "./ThemeSwitch"
+import { mediaQuery } from "../../theme"
 
-const Header = styled.header`
-  height: ${props => (props.isScrolled ? '70px' : '100px')};
+const HeaderWrapper = styled.header`
+  height: ${props => (props.isScrolled ? "70px" : "100px")};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,34 +47,29 @@ const Hamburger = styled.button`
   padding: 0 15px;
   color: ${props => props.theme.colors.highlighted};
   order: 2;
-  ${mq[1]} {
+  ${mediaQuery[1]} {
     display: none;
   }
 `
 
-const useNav = () => {
+const Header = () => {
   const [isNavVisible, setIsNavVisible] = useState(false)
 
   const toggleNavigation = () => setIsNavVisible(!isNavVisible)
-
-  return { isNavVisible, toggleNavigation }
-}
-
-const MainHeader = ({ onChangeTheme, theme }) => {
-  const { isNavVisible, toggleNavigation } = useNav()
 
   return (
     <Scroll
       render={({ y }) => {
         const isScrolled = y > 0
-        const avatarDimension = isScrolled ? '40px' : '60px'
+        const avatarDimension = isScrolled ? "40px" : "60px"
 
         return (
-          <Header isScrolled={isScrolled}>
+          <HeaderWrapper isScrolled={isScrolled}>
             <div>
               <Link to="/">
                 <Avatar width={avatarDimension} height={avatarDimension} />
               </Link>
+
               <NavWrapper>
                 <Navigation
                   isScrolled={isScrolled}
@@ -83,17 +77,16 @@ const MainHeader = ({ onChangeTheme, theme }) => {
                   toggleNavigation={toggleNavigation}
                 />
                 <Hamburger onClick={toggleNavigation}>
-                  <FontAwesomeIcon icon={faBars} />
+                  <FontAwesomeIcon icon="bars" />
                 </Hamburger>
-                <ThemeSwitch onChangeTheme={onChangeTheme} theme={theme} />
+                <ThemeSwitch />
               </NavWrapper>
             </div>
-          </Header>
+          </HeaderWrapper>
         )
       }}
     />
   )
 }
-// }
 
-export default MainHeader
+export default Header

@@ -1,9 +1,10 @@
-import React from 'react'
-import styled from '@emotion/styled'
+/* eslint-disable react/jsx-curly-brace-presence */
+import React from "react"
+import styled from "styled-components"
 
-import { PrimaryText } from './common'
+import { PrimaryText } from "./common"
 
-const Footer = styled.footer`
+const FooterWrapper = styled.footer`
   min-height: 60px;
   padding: 0 ${props => props.theme.contentPadding};
   display: flex;
@@ -20,8 +21,8 @@ const Footer = styled.footer`
   }
 `
 
-const MainFooter = () => (
-  <Footer>
+const Footer = () => (
+  <FooterWrapper>
     <p>
       {`Made with `}
       <span role="img" aria-label="heart">
@@ -43,7 +44,7 @@ const MainFooter = () => (
       </a>
       {`.`}
     </p>
-  </Footer>
+  </FooterWrapper>
 )
 
-export default MainFooter
+export default Footer

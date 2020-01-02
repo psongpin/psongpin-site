@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from "react"
+import styled from "styled-components"
 
-import Avatar from './Avatar'
+import Avatar from "./Avatar"
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,9 +30,9 @@ const Profile = ({ name, title }) => (
     <Avatar />
     <Name>{name}</Name>
     <Title>
-      {'< '}
+      {"< "}
       {title}
-      {' />'}
+      {" />"}
     </Title>
   </Wrapper>
 )

@@ -1,15 +1,12 @@
-import React, { Fragment } from 'react'
-import styled from '@emotion/styled'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import Typist from 'react-typist'
-import 'react-typist/dist/Typist.css'
-import { Link } from 'gatsby'
+import React from "react"
+import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Typist from "react-typist"
+import { Link } from "gatsby"
 
-import SEO from '../components/seo'
-import { Content, PrimaryText } from '../components/common'
-import mq from '../utils/breakpoints'
+import SEO from "../components/seo"
+import { Content, PrimaryText } from "../components/common"
+import { mediaQuery } from "../theme"
 
 const CustomContent = styled(Content)`
   display: flex;
@@ -24,7 +21,7 @@ const TypistText = styled.h1`
   font-size: 36px;
   font-weight: 900;
   margin: 0;
-  ${mq[1]} {
+  ${mediaQuery[1]} {
     font-size: 48px;
   }
 
@@ -60,34 +57,43 @@ const ParagraphContainer = styled.div`
 `
 
 const Contact = () => (
-  <Fragment>
+  <>
     <SEO title="Contact" />
     <CustomContent>
       <div>
         <TypistText>
           <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}>
-            {`Oohh! So you're interested?`}
+            Oohh! So you&apos;re interested?
             <Typist.Backspace count={27} delay={800} />
-            {`Let's have a chat!`}
+            Let&apos;s have a chat!
           </Typist>
         </TypistText>
         <Subtext>Get in touch with me through these contacts:</Subtext>
 
         <ContactLink href="mailto:paulsimon.ongpin@gmail.com">
           <span>
-            <FontAwesomeIcon icon={faEnvelope} />
+            <FontAwesomeIcon icon="envelope" />
           </span>
           paulsimon.ongpin@gmail.com
         </ContactLink>
+
+        <ContactLink href="https://www.linkedin.com/in/psongpin/">
+          <span>
+            <FontAwesomeIcon icon={["fab", "linkedin"]} />
+          </span>
+          psongpin (Paul Simon Ongpin)
+        </ContactLink>
+
         <ContactLink href="https://twitter.com/psongpin">
           <span>
-            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={["fab", "twitter"]} />
           </span>
           @psongpin
         </ContactLink>
+
         <ContactLink href="https://github.com/psongpin">
           <span>
-            <FontAwesomeIcon icon={faGithub} />
+            <FontAwesomeIcon icon={["fab", "github"]} />
           </span>
           psongpin
         </ContactLink>
@@ -95,26 +101,26 @@ const Contact = () => (
         <ParagraphContainer>
           <p>
             Hey! I am very grateful that you came to this page for my contact
-            information. I am currently accepting offers for full-time/part-time
-            remote postions as a Front-end Developer. Let me know if you’re
-            interested, I will be more than happy to talk to you!
+            information. I am currently accepting offers for full-time /
+            part-time remote postions as a Front-end Developer. Let me know if
+            you’re interested, I will be more than happy to talk to you!
           </p>
+
           <p>
-            {`Know more about me `}
-            <Link to="/about">here</Link>
-            {`.`}
+            Know more about me <Link to="/about">here</Link>.
           </p>
+
           <p>Thank you,</p>
+
           <p>
             <strong>
-              <PrimaryText>Paul Simon Ongpin</PrimaryText>
-              {` - Frontend Developer`}
+              <PrimaryText>Paul Simon Ongpin</PrimaryText> - Frontend Developer
             </strong>
           </p>
         </ParagraphContainer>
       </div>
     </CustomContent>
-  </Fragment>
+  </>
 )
 
 export default Contact

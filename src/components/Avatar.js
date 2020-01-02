@@ -1,6 +1,6 @@
-import styled from '@emotion/styled'
+import styled from "styled-components"
 
-import MyPhoto from '../images/PaulSimonOngpin.jpg'
+import MyPhoto from "../images/PaulSimonOngpin.jpg"
 
 const Avatar = styled.img`
   width: ${props => props.width};
@@ -10,9 +10,9 @@ const Avatar = styled.img`
 
 Avatar.defaultProps = {
   src: MyPhoto,
-  alt: 'Paul Simon Ongpin',
-  width: '150px',
-  height: '150px',
+  alt: "Paul Simon Ongpin",
+  width: "150px",
+  height: "150px",
 }
 
 export default Avatar

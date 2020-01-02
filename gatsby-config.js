@@ -18,31 +18,31 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `paul-simon-ongpin-website`,
-        short_name: `paul-ongpin-site`,
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
         start_url: `/`,
-        background_color: `#FFFFFF`,
-        theme_color: `#FF3B3F`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`,
       },
     },
     {
-      resolve: `gatsby-plugin-emotion`,
+      resolve: `gatsby-plugin-styled-components`,
       options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
+        displayName: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Lato:400,400i,700,700i,900'],
+          families: ["Lato:400,400i,700,700i,900"],
         },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ],
 }

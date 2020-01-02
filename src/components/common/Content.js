@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from "styled-components"
 
 const Content = styled.div`
   width: ${props => props.width};
@@ -9,7 +9,7 @@ const Content = styled.div`
 `
 
 Content.defaultProps = {
-  width: '800px',
+  width: "800px",
 }
 
 export default Content
