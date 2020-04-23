@@ -1,13 +1,13 @@
 import Head from 'next/head'
 
-export default function Home() {
+export default function About() {
   return (
     <div className="container">
       <Head>
-        <title>Home</title>
+        <title>About</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      index
+      About
     </div>
   )
 }
