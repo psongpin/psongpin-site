@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import Link from 'next/link'
 
+import '../css/tailwind.css'
+
 function App({ Component, pageProps }) {
   return (
     <>
-      <header>
+      <header className="flex justify-between">
         <Link href="/">
           <a>Home</a>
         </Link>
