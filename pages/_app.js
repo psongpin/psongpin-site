@@ -2,10 +2,12 @@
 import Link from 'next/link'
 
 import '../css/tailwind.css'
+import GlobalFontStyle from '../css/font'
 
 function App({ Component, pageProps }) {
   return (
     <>
+      <GlobalFontStyle />
       <header className="flex justify-between">
         <Link href="/">
           <a>Home</a>
