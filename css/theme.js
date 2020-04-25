@@ -6,6 +6,7 @@ const theme = {
       bg: '#FFFFFF',
       bg_overlay: '#BFBFBF',
       header_icon: '#BFBFBF',
+      heading: '#969696',
     },
   },
 
@@ -16,6 +17,7 @@ const theme = {
       bg: '#292929',
       bg_overlay: '#FFFFFF',
       header_icon: '#FFFFFF',
+      heading: '#FFFFFF',
     },
   },
 }

@@ -25,7 +25,14 @@ function App({ Component, pageProps }) {
         <GlobalFontStyle />
         <ThemeProvider theme={theme[themeMode]}>
           <Header />
-          <Component {...pageProps} />
+          <main
+            css={`
+              // 1vh - header + footer height
+              min-height: calc(100vh - 9rem);
+            `}
+          >
+            <Component {...pageProps} />
+          </main>
           <Footer />
         </ThemeProvider>
       </ThemeModeContext.Provider>

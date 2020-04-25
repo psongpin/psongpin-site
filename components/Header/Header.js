@@ -22,10 +22,10 @@ const Header = () => {
   const toggleNavigation = () =>
     setIsNavVisible(prevIsNavVisible => !prevIsNavVisible)
 
-  const avatarDimensions = '60px'
+  const avatarDimensions = '50px'
 
   return (
-    <HeaderWrapper className="flex items-center justify-between h-24 px-4">
+    <HeaderWrapper className="flex items-center justify-between h-20 px-4 sticky top-0">
       <Link href="/">
         <a>
           <Avatar width={avatarDimensions} height={avatarDimensions} />
