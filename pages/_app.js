@@ -1,26 +1,33 @@
 /* eslint-disable react/prop-types */
-import Link from 'next/link'
+import { useState } from 'react'
+import { ThemeProvider } from 'styled-components'
+import { library, config } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+import GlobalFontStyle from '../css/font'
+import Header from '../components/Header'
+import theme from '../css/theme'
+import ThemeModeContext from '../css/context'
 
 import '../css/tailwind.css'
-import GlobalFontStyle from '../css/font'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
+config.autoAddCss = false
+library.add(fab, fas)
 
 function App({ Component, pageProps }) {
+  const [themeMode, setThemeMode] = useState('dark')
   return (
     <>
       <GlobalFontStyle />
-      <header className="flex justify-between">
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-        <Link href="/contact">
-          <a>Contact</a>
-        </Link>
-      </header>
-      <Component {...pageProps} />
-      <footer>footer</footer>
+      <ThemeModeContext.Provider value={{ themeMode, setThemeMode }}>
+        <ThemeProvider theme={theme[themeMode]}>
+          <Header />
+          <Component {...pageProps} />
+          <footer>footer</footer>
+        </ThemeProvider>
+      </ThemeModeContext.Provider>
     </>
   )
 }
