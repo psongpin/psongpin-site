@@ -11,8 +11,8 @@ import theme from '../css/theme'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-import '../css/tailwind.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import '../css/tailwind.css'
 
 config.autoAddCss = false
 library.add(fab, fas)
@@ -29,6 +29,7 @@ function App({ Component, pageProps }) {
             css={`
               // 1vh - header + footer height
               min-height: calc(100vh - 9rem);
+              background-color: ${scprops => scprops.theme.colors.bg};
             `}
           >
             <Component {...pageProps} />

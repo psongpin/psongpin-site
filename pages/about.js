@@ -17,8 +17,7 @@ export default function About() {
     <div
       className="px-4 py-16"
       css={`
-        background-color: ${scprops => scprops.theme.colors.bg};
-        transition: all 0.2s ease-in-out;
+        min-height: calc(100vh - 9rem);
       `}
     >
       <div
