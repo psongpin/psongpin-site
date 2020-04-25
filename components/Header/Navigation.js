@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -6,6 +7,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { breakpoints } from '../../css/theme'
+import ScrollCheckContext from './context'
 
 const links = [
   { label: 'Home', url: '/' },
@@ -50,6 +52,7 @@ const NavOverlay = styled.div`
 
 const Navigation = ({ isNavVisible, toggleNavigation }) => {
   const router = useRouter()
+  const { isPageOnTop } = useContext(ScrollCheckContext)
   return (
     <>
       <NavOverlay
@@ -76,7 +79,11 @@ const Navigation = ({ isNavVisible, toggleNavigation }) => {
                 <Anchor
                   className={cn(
                     'block no-underline text-xl font-bold py-4 px-4 leading-6',
-                    { active: router.pathname === url }
+                    {
+                      active: router.pathname === url,
+                      'md:text-xl': isPageOnTop,
+                      'md:text-base': !isPageOnTop,
+                    }
                   )}
                   onClick={toggleNavigation}
                 >

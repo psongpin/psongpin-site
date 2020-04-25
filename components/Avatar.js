@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const Avatar = styled.img`
   width: ${props => props.width};
   height: ${props => props.height};
+  transition: all 0.2s ease-in-out;
 `
 
 Avatar.defaultProps = {
