@@ -6,9 +6,10 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
 import GlobalFontStyle from '../css/font'
-import Header from '../components/Header'
-import theme from '../css/theme'
 import ThemeModeContext from '../css/context'
+import theme from '../css/theme'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 import '../css/tailwind.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -20,12 +21,12 @@ function App({ Component, pageProps }) {
   const [themeMode, setThemeMode] = useState('dark')
   return (
     <>
-      <GlobalFontStyle />
       <ThemeModeContext.Provider value={{ themeMode, setThemeMode }}>
+        <GlobalFontStyle />
         <ThemeProvider theme={theme[themeMode]}>
           <Header />
           <Component {...pageProps} />
-          <footer>footer</footer>
+          <Footer />
         </ThemeProvider>
       </ThemeModeContext.Provider>
     </>
