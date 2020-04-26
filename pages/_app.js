@@ -26,6 +26,7 @@ function App({ Component, pageProps }) {
         <ThemeProvider theme={theme[themeMode]}>
           <Header />
           <main
+            className="transition-all duration-200 ease-in-out"
             css={`
               // 1vh - header + footer height
               min-height: calc(100vh - 9rem);

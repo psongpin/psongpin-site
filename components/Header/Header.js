@@ -12,7 +12,6 @@ import ScrollCheckContext from './context'
 
 const HeaderWrapper = styled.header`
   background-color: ${props => props.theme.colors.bg};
-  transition: all 0.2s ease-in-out;
 `
 
 const Hamburger = styled.button.attrs({
@@ -35,7 +34,7 @@ const Header = () => {
       <ScrollChecker />
       <HeaderWrapper
         className={cn(
-          'flex items-center justify-center px-4 sticky top-0 z-40',
+          'flex items-center justify-center px-4 sticky top-0 z-40 transition-all duration-200 ease-in-out',
           {
             'shadow-lg': !isPageOnTop,
             'h-16': !isPageOnTop,

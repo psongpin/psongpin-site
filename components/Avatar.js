@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const Avatar = styled.img`
   width: ${props => props.width};
   height: ${props => props.height};
-  transition: all 0.2s ease-in-out;
 `
 
 Avatar.defaultProps = {
@@ -11,7 +10,7 @@ Avatar.defaultProps = {
   alt: 'Paul Simon Ongpin',
   width: '150px',
   height: '150px',
-  className: 'rounded-full',
+  className: 'rounded-full transition-all duration-200 ease-in-out',
 }
 
 export default Avatar

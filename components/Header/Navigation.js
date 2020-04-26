@@ -20,7 +20,6 @@ const Navbar = styled.nav`
   width: 280px;
   background: ${props => props.theme.colors.bg};
   transform: translateX(${props => (props.isNavVisible ? '0%' : '100%')});
-  transition: all 0.2s ease-in-out;
   @media (min-width: ${breakpoints[1]}px) {
     height: auto;
     width: auto;
@@ -30,7 +29,6 @@ const Navbar = styled.nav`
 
 const Anchor = styled.a`
   color: ${props => props.theme.colors.base};
-  transition: all 0.2s ease-in-out;
 
   &.active,
   &:hover,
@@ -66,7 +64,7 @@ const Navigation = ({ isNavVisible, toggleNavigation }) => {
       />
       <Navbar
         isNavVisible={isNavVisible}
-        className="md:order-1 fixed md:static z-50 top-0 right-0"
+        className="md:order-1 fixed md:static z-50 top-0 right-0 transition-all duration-200 ease-in-out"
       >
         <Close
           onClick={toggleNavigation}
@@ -80,7 +78,7 @@ const Navigation = ({ isNavVisible, toggleNavigation }) => {
               <Link href={url} passHref>
                 <Anchor
                   className={cn(
-                    'block no-underline text-xl font-bold py-4 px-4 leading-6',
+                    'block no-underline text-xl font-bold py-4 px-4 leading-6 transition-all duration-200 ease-in-out',
                     {
                       active: router.pathname === url,
                       'md:text-xl': isPageOnTop,

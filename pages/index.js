@@ -8,12 +8,11 @@ import { Heading, Text, Anchor } from '../components/common'
 
 const ButtonText = styled.span.attrs({
   className:
-    'w-full text-center inline-block py-3 md:text-2xl text-xl font-bold rounded hover:opacity-75',
+    'w-full text-center inline-block py-3 md:text-2xl text-xl font-bold rounded hover:opacity-75 transition-all duration-200 ease-in-out',
 })`
   max-width: 400px;
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
-  transition: all 0.2s ease-in-out;
 `
 
 const Home = () => {

@@ -8,7 +8,7 @@ const FooterWrapper = styled.footer`
 `
 
 const Footer = () => (
-  <FooterWrapper className="py-4 px-4 flex items-center justify-center text-center">
+  <FooterWrapper className="py-4 px-4 flex items-center justify-center text-center transition-all duration-200 ease-in-out">
     <Text as="span">
       {`Made with `}
       <span role="img" aria-label="heart">
