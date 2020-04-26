@@ -15,7 +15,9 @@ const HeaderWrapper = styled.header`
   transition: all 0.2s ease-in-out;
 `
 
-const Hamburger = styled.button`
+const Hamburger = styled.button.attrs({
+  type: 'button',
+})`
   color: ${props => props.theme.colors.header_icon};
 `
 

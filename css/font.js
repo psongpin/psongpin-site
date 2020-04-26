@@ -134,5 +134,39 @@ const GlobalFontStyle = createGlobalStyle`
 html, body {
   font-family: 'Lato', sans-serif;
 }
+
+.Typist .Cursor {
+  display: inline-block
+}
+
+.Typist .Cursor--blinking {
+  opacity: 1;
+  -webkit-animation: blink 1s linear infinite;
+  animation: blink 1s linear infinite
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1
+  }
+  50% {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1
+  }
+  50% {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
 `
 export default GlobalFontStyle

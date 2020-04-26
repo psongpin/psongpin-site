@@ -39,7 +39,9 @@ const Anchor = styled.a`
   }
 `
 
-const Close = styled.button`
+const Close = styled.button.attrs({
+  type: 'button',
+})`
   right: 1rem;
   top: 30px;
   color: ${props => props.theme.colors.header_icon};
@@ -75,7 +77,7 @@ const Navigation = ({ isNavVisible, toggleNavigation }) => {
         <ul className="list-none text-center m-0 md:mt-0 mt-16 p-0 flex md:flex-row flex-col">
           {links.map(({ label, url }) => (
             <li key={url}>
-              <Link href={url}>
+              <Link href={url} passHref>
                 <Anchor
                   className={cn(
                     'block no-underline text-xl font-bold py-4 px-4 leading-6',
