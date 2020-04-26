@@ -1,12 +1,12 @@
 const theme = {
   light: {
     colors: {
-      base: '#BFBFBF',
+      base: '#929292',
       primary: '#FF3B3F',
       bg: '#FFFFFF',
-      bg_overlay: '#BFBFBF',
-      header_icon: '#BFBFBF',
-      heading: '#969696',
+      bg_overlay: '#929292',
+      header_icon: '#929292',
+      heading: '#8C8C8C',
     },
   },
 
