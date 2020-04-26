@@ -34,11 +34,14 @@ const Header = () => {
     <ScrollCheckContext.Provider value={{ isPageOnTop, setIsPageOnTop }}>
       <ScrollChecker />
       <HeaderWrapper
-        className={cn('flex items-center justify-center px-4 sticky top-0', {
-          'shadow-lg': !isPageOnTop,
-          'h-16': !isPageOnTop,
-          'h-20': isPageOnTop,
-        })}
+        className={cn(
+          'flex items-center justify-center px-4 sticky top-0 z-40',
+          {
+            'shadow-lg': !isPageOnTop,
+            'h-16': !isPageOnTop,
+            'h-20': isPageOnTop,
+          }
+        )}
       >
         <div className="flex items-center justify-between container">
           <Link href="/">
