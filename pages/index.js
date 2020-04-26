@@ -8,9 +8,9 @@ import { Heading, Text, Anchor } from '../components/common'
 
 const ButtonText = styled.span.attrs({
   className:
-    'm-width-full text-center inline-block py-3 text-2xl font-bold rounded hover:opacity-75',
+    'w-full text-center inline-block py-3 md:text-2xl text-xl font-bold rounded hover:opacity-75',
 })`
-  width: 400px;
+  max-width: 400px;
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
   transition: all 0.2s ease-in-out;
