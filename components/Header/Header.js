@@ -34,33 +34,35 @@ const Header = () => {
     <ScrollCheckContext.Provider value={{ isPageOnTop, setIsPageOnTop }}>
       <ScrollChecker />
       <HeaderWrapper
-        className={cn('flex items-center justify-between px-4 sticky top-0', {
+        className={cn('flex items-center justify-center px-4 sticky top-0', {
           'shadow-lg': !isPageOnTop,
           'h-16': !isPageOnTop,
           'h-20': isPageOnTop,
         })}
       >
-        <Link href="/">
-          <a>
-            <Avatar width={avatarDimensions} height={avatarDimensions} />
-          </a>
-        </Link>
+        <div className="flex items-center justify-between container">
+          <Link href="/">
+            <a>
+              <Avatar width={avatarDimensions} height={avatarDimensions} />
+            </a>
+          </Link>
 
-        <div className="flex justify-between items-center">
-          <Navigation
-            isNavVisible={isNavVisible}
-            toggleNavigation={toggleNavigation}
-          />
+          <div className="flex justify-between items-center">
+            <Navigation
+              isNavVisible={isNavVisible}
+              toggleNavigation={toggleNavigation}
+            />
 
-          <Hamburger
-            onClick={toggleNavigation}
-            className="text-2xl bg-transparent border-none outline-none focus:outline-none p-0 ml-6 order-2 md:hidden"
-          >
-            <FontAwesomeIcon icon={['fas', 'bars']} />
-          </Hamburger>
+            <Hamburger
+              onClick={toggleNavigation}
+              className="text-2xl bg-transparent border-none outline-none focus:outline-none p-0 ml-6 order-2 md:hidden"
+            >
+              <FontAwesomeIcon icon={['fas', 'bars']} />
+            </Hamburger>
 
-          <div className="md:ml-6 flex items-center order-1 md:order-3">
-            <ThemeSwitch />
+            <div className="md:ml-6 flex items-center order-1 md:order-3">
+              <ThemeSwitch />
+            </div>
           </div>
         </div>
       </HeaderWrapper>
