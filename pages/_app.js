@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -17,7 +17,13 @@ import '../css/tailwind.css'
 config.autoAddCss = false
 library.add(fab, fas)
 
-function App({ Component, pageProps }) {
+const Main = styled.main`
+  // 1vh - header + footer height
+  min-height: calc(100vh - 9rem);
+  background-color: ${scprops => scprops.theme.colors.bg};
+`
+
+const App = ({ Component, pageProps }) => {
   const [themeMode, setThemeMode] = useState('dark')
   return (
     <>
@@ -25,16 +31,9 @@ function App({ Component, pageProps }) {
         <GlobalFontStyle />
         <ThemeProvider theme={theme[themeMode]}>
           <Header />
-          <main
-            className="transition-all duration-200 ease-in-out"
-            css={`
-              // 1vh - header + footer height
-              min-height: calc(100vh - 9rem);
-              background-color: ${scprops => scprops.theme.colors.bg};
-            `}
-          >
+          <Main className="transition-all duration-200 ease-in-out">
             <Component {...pageProps} />
-          </main>
+          </Main>
           <Footer />
         </ThemeProvider>
       </ThemeModeContext.Provider>

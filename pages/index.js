@@ -15,6 +15,14 @@ const ButtonText = styled.span.attrs({
   background-color: ${props => props.theme.colors.primary};
 `
 
+const Wrapper = styled.div`
+  min-height: calc(100vh - 9rem);
+`
+
+const Content = styled.div`
+  max-width: 800px;
+`
+
 const Home = () => {
   const title = `Home | Paul Simon Ongpin's Personal Website`
   return (
@@ -22,18 +30,8 @@ const Home = () => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div
-        className="px-4 py-16 flex items-center"
-        css={`
-          min-height: calc(100vh - 9rem);
-        `}
-      >
-        <div
-          className="mx-auto w-100 flex-1 text-center"
-          css={`
-            max-width: 800px;
-          `}
-        >
+      <Wrapper className="px-4 py-16 flex items-center">
+        <Content className="mx-auto w-100 flex-1 text-center">
           <Heading
             as="h1"
             className="font-black m-0 text-5xl md:text-6xl text-center"
@@ -90,8 +88,8 @@ const Home = () => {
               </Anchor>
             </Link>
           </div>
-        </div>
-      </div>
+        </Content>
+      </Wrapper>
     </>
   )
 }

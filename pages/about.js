@@ -1,6 +1,7 @@
 import moment from 'moment'
 import cn from 'classnames'
 import Head from 'next/head'
+import styled from 'styled-components'
 
 import { Text, Heading } from '../components/common'
 import Profile from '../components/Profile'
@@ -13,6 +14,14 @@ const classNames = {
   list: 'list-disc list-inside',
 }
 
+const Wrapper = styled.div`
+  min-height: calc(100vh - 9rem);
+`
+
+const Content = styled.div`
+  max-width: 800px;
+`
+
 const About = () => {
   const title = `About | Paul Simon Ongpin's Personal Website`
   return (
@@ -20,18 +29,8 @@ const About = () => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div
-        className="px-4 py-16"
-        css={`
-          min-height: calc(100vh - 9rem);
-        `}
-      >
-        <div
-          className="mx-auto w-100"
-          css={`
-            max-width: 800px;
-          `}
-        >
+      <Wrapper className="px-4 py-16">
+        <Content className="mx-auto w-100">
           <div className="mb-16">
             <Profile
               name="Paul Simon Ongpin"
@@ -124,8 +123,8 @@ const About = () => {
               </ul>
             </div>
           </div>
-        </div>
-      </div>
+        </Content>
+      </Wrapper>
     </>
   )
 }

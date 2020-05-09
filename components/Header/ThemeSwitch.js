@@ -11,7 +11,6 @@ const Switch = styled.button`
       height: 20px;
       background-color: ${isSwitched ? '#ffffff' : '#1C1C1C'};
       border-radius: 10px;
-      transition: all 0.2s ease-in-out;
 
       > div {
         top: 2px;
@@ -22,7 +21,6 @@ const Switch = styled.button`
         border-radius: 8px;
         line-height: 16px;
         color: ${isSwitched ? '#ffffff' : '#1C1C1C'};
-        transition: all 0.2s ease-in-out;
       }
     `
   }}
@@ -33,11 +31,13 @@ const ThemeSwitch = () => {
 
   return (
     <Switch
-      className="relative p-0 border-none shadow-none outline-none focus:outline-none"
+      className="relative p-0 border-none shadow-none outline-none focus:outline-none transition-all duration-200 ease-in-out"
       themeMode={themeMode}
       onClick={() => setThemeMode(themeMode === 'light' ? 'dark' : 'light')}
     >
-      <div className="absolute text-center text-xs">{themeMode}</div>
+      <div className="absolute text-center text-xs transition-all duration-200 ease-in-out">
+        {themeMode}
+      </div>
     </Switch>
   )
 }

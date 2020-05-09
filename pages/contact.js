@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Typist from 'react-typist'
 import Link from 'next/link'
 import Head from 'next/head'
+import styled from 'styled-components'
 
 import { Heading, Anchor, Text } from '../components/common'
 
@@ -23,6 +24,14 @@ const contacts = [
   },
 ]
 
+const Wrapper = styled.div`
+  min-height: calc(100vh - 9rem);
+`
+
+const Content = styled.div`
+  max-width: 800px;
+`
+
 const Contact = () => {
   const title = `Contact | Paul Simon Ongpin's Personal Website`
   return (
@@ -30,18 +39,8 @@ const Contact = () => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div
-        className="px-4 py-16 flex items-center"
-        css={`
-          min-height: calc(100vh - 9rem);
-        `}
-      >
-        <div
-          className="mx-auto w-100 flex-1"
-          css={`
-            max-width: 800px;
-          `}
-        >
+      <Wrapper className="px-4 py-16 flex items-center">
+        <Content className="mx-auto w-100 flex-1">
           <Heading as="h1" className="font-black m-0 text-4xl md:text-5xl">
             <Typist cursor={{ hideWhenDone: true, hideWhenDoneDelay: 0 }}>
               Oohh! So you&apos;re interested?
@@ -93,8 +92,8 @@ const Contact = () => {
               {` - Frontend Developer`}
             </strong>
           </Text>
-        </div>
-      </div>
+        </Content>
+      </Wrapper>
     </>
   )
 }
