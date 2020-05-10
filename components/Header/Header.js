@@ -17,7 +17,7 @@ const HeaderWrapper = styled.header`
 const Hamburger = styled.button.attrs({
   type: 'button',
 })`
-  color: ${props => props.theme.colors.header_icon};
+  color: ${props => props.theme.colors.headerIcon};
 `
 
 const Header = () => {

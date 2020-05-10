@@ -42,11 +42,11 @@ const Close = styled.button.attrs({
 })`
   right: 1rem;
   top: 30px;
-  color: ${props => props.theme.colors.header_icon};
+  color: ${props => props.theme.colors.headerIcon};
 `
 
 const NavOverlay = styled.div`
-  background-color: ${props => props.theme.colors.bg_overlay};
+  background-color: ${props => props.theme.colors.bgOverlay};
   opacity: 0.6;
 `
 
