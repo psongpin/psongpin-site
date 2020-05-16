@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, FC } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -9,17 +9,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { breakpoints } from '../../css/theme'
 import ScrollCheckContext from './context'
 
+interface NavigationProps {
+  isNavVisible: boolean
+  toggleNavigation: () => void
+}
+
+interface NavbarProps {
+  isNavVisible: boolean
+}
+
 const links = [
   { label: 'Home', url: '/' },
   { label: 'About', url: '/about' },
   { label: 'Contact', url: '/contact' },
 ]
 
-const Navbar = styled.nav`
+const Navbar = styled.nav<NavbarProps>`
   height: 100vh;
   width: 280px;
-  background: ${props => props.theme.colors.bg};
-  transform: translateX(${props => (props.isNavVisible ? '0%' : '100%')});
+  background: ${(props): string => props.theme.colors.bg};
+  transform: translateX(
+    ${(props): string => (props.isNavVisible ? '0%' : '100%')}
+  );
   @media (min-width: ${breakpoints[1]}px) {
     height: auto;
     width: auto;
@@ -28,12 +39,12 @@ const Navbar = styled.nav`
 `
 
 const Anchor = styled.a`
-  color: ${props => props.theme.colors.base};
+  color: ${(props): string => props.theme.colors.base};
 
   &.active,
   &:hover,
   &:focus {
-    color: ${props => props.theme.colors.primary};
+    color: ${(props): string => props.theme.colors.primary};
   }
 `
 
@@ -42,15 +53,18 @@ const Close = styled.button.attrs({
 })`
   right: 1rem;
   top: 30px;
-  color: ${props => props.theme.colors.headerIcon};
+  color: ${(props): string => props.theme.colors.headerIcon};
 `
 
 const NavOverlay = styled.div`
-  background-color: ${props => props.theme.colors.bgOverlay};
+  background-color: ${(props): string => props.theme.colors.bgOverlay};
   opacity: 0.6;
 `
 
-const Navigation = ({ isNavVisible, toggleNavigation }) => {
+const Navigation: FC<NavigationProps> = ({
+  isNavVisible,
+  toggleNavigation,
+}) => {
   const router = useRouter()
   const { isPageOnTop } = useContext(ScrollCheckContext)
   return (

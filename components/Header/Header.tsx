@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, FC } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,21 +11,22 @@ import ScrollChecker from './ScrollChecker'
 import ScrollCheckContext from './context'
 
 const HeaderWrapper = styled.header`
-  background-color: ${props => props.theme.colors.bg};
+  background-color: ${(props): string => props.theme.colors.bg};
 `
 
 const Hamburger = styled.button.attrs({
   type: 'button',
 })`
-  color: ${props => props.theme.colors.headerIcon};
+  color: ${(props): string => props.theme.colors.headerIcon};
 `
 
-const Header = () => {
+const Header: FC<{}> = () => {
   const [isNavVisible, setIsNavVisible] = useState(false)
   const [isPageOnTop, setIsPageOnTop] = useState(true)
 
-  const toggleNavigation = () =>
+  const toggleNavigation = (): void => {
     setIsNavVisible(prevIsNavVisible => !prevIsNavVisible)
+  }
 
   const avatarDimensions = isPageOnTop ? '50px' : '40px'
 

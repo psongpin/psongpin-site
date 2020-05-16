@@ -1,8 +1,16 @@
 import styled from 'styled-components'
 
-const Avatar = styled.img`
-  width: ${props => props.width};
-  height: ${props => props.height};
+interface Props {
+  width: string
+  height: string
+  src?: string
+  alt?: string
+  className?: string
+}
+
+const Avatar = styled.img<Props>`
+  width: ${(props): string => props.width};
+  height: ${(props): string => props.height};
 `
 
 Avatar.defaultProps = {

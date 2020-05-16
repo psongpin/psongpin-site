@@ -1,11 +1,17 @@
 import { Scroll } from 'react-fns'
-import { useEffect, useContext } from 'react'
+import { useEffect, useContext, FC } from 'react'
 
 import ScrollCheckContext from './context'
 
-const ScrollChecker = () => <Scroll render={({ y }) => <Trigger y={y} />} />
+interface Props {
+  y: number
+}
 
-const Trigger = ({ y = 0 }) => {
+const ScrollChecker: FC<{}> = () => (
+  <Scroll render={({ y }): JSX.Element => <Trigger y={y} />} />
+)
+
+const Trigger: FC<Props> = ({ y = 0 }) => {
   const { isPageOnTop, setIsPageOnTop } = useContext(ScrollCheckContext)
 
   useEffect(() => {
