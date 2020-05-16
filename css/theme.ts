@@ -1,4 +1,6 @@
-const theme = {
+import { Themes } from '../types/theme'
+
+const theme: Themes = {
   light: {
     colors: {
       base: '#ABABAB',
@@ -22,6 +24,6 @@ const theme = {
   },
 }
 
-export const breakpoints = [640, 768, 1024, 1280]
+export const breakpoints: number[] = [640, 768, 1024, 1280]
 
 export default theme
