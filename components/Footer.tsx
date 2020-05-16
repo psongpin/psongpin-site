@@ -1,23 +1,22 @@
+import { FC } from 'react'
 import styled from 'styled-components'
 import { Anchor, Text } from './common'
 
 const FooterWrapper = styled.footer`
   min-height: 4rem;
-  color: ${props => props.theme.colors.base};
-  background-color: ${props => props.theme.colors.bg};
+  color: ${(props): string => props.theme.colors.base};
+  background-color: ${(props): string => props.theme.colors.bg};
 `
 
-const Footer = () => (
+const Footer: FC<{}> = () => (
   <FooterWrapper className="py-4 px-4 flex items-center justify-center text-center transition-all duration-200 ease-in-out">
-    <Text as="span">
+    <Text.span>
       {`Made with `}
       <span role="img" aria-label="heart">
         ❤️
       </span>
       {` by `}
-      <Text as="span" colorAttr="primary">
-        Paul Simon Ongpin
-      </Text>
+      <Text.span colorAttr="primary">Paul Simon Ongpin</Text.span>
       {` using `}
       <Anchor
         href="https://nextjs.org/"
@@ -37,7 +36,7 @@ const Footer = () => (
         React
       </Anchor>
       .
-    </Text>
+    </Text.span>
   </FooterWrapper>
 )
 

@@ -16,3 +16,11 @@ type Colors = {
   headerIcon: string
   heading: string
 }
+
+export type ColorAttr =
+  | 'base'
+  | 'primary'
+  | 'bg'
+  | 'bgOverlay'
+  | 'headerIcon'
+  | 'heading'
