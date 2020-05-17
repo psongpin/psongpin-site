@@ -8,21 +8,19 @@ import Document, {
 import { ServerStyleSheet } from 'styled-components'
 import { RenderPageResult } from 'next/dist/next-server/lib/utils'
 
-// type GetInitialPropsReturnValue = Promise<{
-//   styles: JSX.Element
-//   html: string
-//   head?: JSX.Element[]
-// }>
-
-type CtxRenderPageResult = RenderPageResult | Promise<RenderPageResult>
-
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<{
+    styles: JSX.Element
+    html: string
+    head?: (JSX.Element | null)[] | undefined
+  }> {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 
     try {
-      ctx.renderPage = (): CtxRenderPageResult =>
+      ctx.renderPage = (): RenderPageResult | Promise<RenderPageResult> =>
         originalRenderPage({
           enhanceApp: App => (props): JSX.Element =>
             sheet.collectStyles(<App {...props} />),
