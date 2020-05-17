@@ -1,4 +1,6 @@
-const getTimeDiff = (a, b) => {
+import { Moment } from 'moment'
+
+const getTimeDiff = (a: Moment, b: Moment): string => {
   const years = a.diff(b, 'years')
   b.add(years, 'years')
   const months = a.diff(b, 'months')

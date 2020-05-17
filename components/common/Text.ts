@@ -7,13 +7,16 @@ interface Props {
 }
 
 const Text = {
-  p: styled.p.attrs(() => ({
-    className: 'mb-4',
-  }))<Props>`
+  p: styled.p<Props>`
+    color: ${({ theme, colorAttr = 'base' }): string =>
+      theme.colors[colorAttr]};
+    margin-bottom: 1rem;
+  `,
+  span: styled.span<Props>`
     color: ${({ theme, colorAttr = 'base' }): string =>
       theme.colors[colorAttr]};
   `,
-  span: styled.span<Props>`
+  li: styled.li<Props>`
     color: ${({ theme, colorAttr = 'base' }): string =>
       theme.colors[colorAttr]};
   `,

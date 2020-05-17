@@ -1,7 +1,7 @@
 import moment from 'moment'
 import getTimeDiff from '../utils/time'
 
-export const personalStuff = [
+export const personalStuff: string[] = [
   'am a breadwinner of my family (making a living to support my mother and siblings’ education). 👨‍👩‍👦',
   'teach tech stuff to interesting people and career-shifters. 👨‍🏫',
   'love reading useful matierials like coding resources and docs. 📄',
@@ -12,7 +12,11 @@ export const personalStuff = [
   'am a Pokemon Trainer 🎮',
 ]
 
-export const professionalExp = [
+export const professionalExp: {
+  company: string
+  info: string
+  description: string
+}[] = [
   {
     company: 'Laguro - Front-end Software Engineer',
     info: `August 2018 - December 2019 (Remote / Full-time - San Leandro, California) ${getTimeDiff(
@@ -57,7 +61,12 @@ export const professionalExp = [
   },
 ]
 
-export const skills = {
+export const skills: {
+  set1: string[]
+  set2: string[]
+  set3: string[]
+  set4: string[]
+} = {
   set1: [
     'Git and Github',
     'HTML5 / CSS3',

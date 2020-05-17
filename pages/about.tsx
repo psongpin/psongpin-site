@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import moment from 'moment'
 import cn from 'classnames'
 import Head from 'next/head'
@@ -22,7 +23,7 @@ const Content = styled.div`
   max-width: 800px;
 `
 
-const About = () => {
+const About: FC<{}> = () => {
   const title = `About | Paul Simon Ongpin's Personal Website`
   return (
     <>
@@ -39,10 +40,8 @@ const About = () => {
           </div>
 
           <div className="mb-16">
-            <Heading as="h2" className={classNames.sectionHead}>
-              About Me
-            </Heading>
-            <Text>
+            <Heading.h2 className={classNames.sectionHead}>About Me</Heading.h2>
+            <Text.p>
               {`Hello! My name is Paul. I live in the beautiful islands of Philippines `}
               <span role="img" aria-label="Philippines">
                 🇵🇭
@@ -54,21 +53,19 @@ const About = () => {
                 Wordpress Theme developer for 2 years before jumping in the React
                 bandwagon/hype. I really love doing CSS stuff. I must say, I made the
                 right choice!`}
-            </Text>
-            <Text>For personal things, I:</Text>
+            </Text.p>
+            <Text.p>For personal things, I:</Text.p>
             <ul className="list-disc list-inside">
               {personalStuff.map(stuff => (
-                <Text as="li" key={stuff}>
-                  {stuff}
-                </Text>
+                <Text.li key={stuff}>{stuff}</Text.li>
               ))}
             </ul>
           </div>
 
           <div className="mb-16">
-            <Heading as="h2" className={classNames.sectionHead}>
+            <Heading.h2 className={classNames.sectionHead}>
               Professional Experience
-            </Heading>
+            </Heading.h2>
             {professionalExp.map(profExp => (
               <ProfExp
                 key={profExp.company}
@@ -80,45 +77,37 @@ const About = () => {
           </div>
 
           <div className="mb-16">
-            <Heading as="h2" className={classNames.sectionHead}>
+            <Heading.h2 className={classNames.sectionHead}>
               Skills and Proficiency
-            </Heading>
-            <Heading as="h3" className="text-lg font-bold mb-4">
+            </Heading.h2>
+            <Heading.h3 className="text-lg font-bold mb-4">
               General Development Skills
-            </Heading>
+            </Heading.h3>
             <div className="md:flex mb-6">
               <ul className={cn('md:flex-1 md:w-1/2 w-full', classNames.list)}>
                 {skills.set1.map(skill => (
-                  <Text as="li" key={skill}>
-                    {skill}
-                  </Text>
+                  <Text.li key={skill}>{skill}</Text.li>
                 ))}
               </ul>
               <ul className={cn('md:flex-1 md:w-1/2 w-full', classNames.list)}>
                 {skills.set2.map(skill => (
-                  <Text as="li" key={skill}>
-                    {skill}
-                  </Text>
+                  <Text.li key={skill}>{skill}</Text.li>
                 ))}
               </ul>
             </div>
 
-            <Heading as="h3" className="text-lg font-bold mb-4">
+            <Heading.h3 className="text-lg font-bold mb-4">
               React.js Related Skills and Libraries
-            </Heading>
+            </Heading.h3>
             <div className="md:flex mb-6">
               <ul className={cn('md:flex-1 md:w-1/2 w-full', classNames.list)}>
                 {skills.set3.map(skill => (
-                  <Text as="li" key={skill}>
-                    {skill}
-                  </Text>
+                  <Text.li key={skill}>{skill}</Text.li>
                 ))}
               </ul>
               <ul className={cn('md:flex-1 md:w-1/2 w-full', classNames.list)}>
                 {skills.set4.map(skill => (
-                  <Text as="li" key={skill}>
-                    {skill}
-                  </Text>
+                  <Text.li key={skill}>{skill}</Text.li>
                 ))}
               </ul>
             </div>
