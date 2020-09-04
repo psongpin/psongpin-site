@@ -1,12 +1,14 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
+import Button from 'components/Button'
+
 const MenuToggle: React.FC<{
   onClick: () => void
   menuVisibility: string
 }> = ({ onClick, menuVisibility }) => (
-  <button
+  <Button
     type="button"
-    className="appearance-none focus:outline-none border-solid border-2 border-white text-white uppercase text-sm p-2 rounded-full"
+    className="uppercase text-sm p-2"
     onClick={onClick}
     style={{ width: 100 }}
   >
@@ -20,7 +22,7 @@ const MenuToggle: React.FC<{
         {menuVisibility === 'open' ? 'close' : 'menu'}
       </motion.span>
     </AnimatePresence>
-  </button>
+  </Button>
 )
 
 export default MenuToggle

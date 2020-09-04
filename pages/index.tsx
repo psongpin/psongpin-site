@@ -1,6 +1,7 @@
 import { PageWrapper, AnimatedName, Divider, FlashText } from 'components/home'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import Button from 'components/Button'
 
 const Home: React.FC = () => {
   const buttonText = `Let's have a chat!`
@@ -24,29 +25,10 @@ const Home: React.FC = () => {
           }}
           className="text-center mt-8"
         >
-          <Link href="/page-2" passHref>
-            <motion.a
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: '#fff',
-                color: '#718096',
-                transition: { duration: 0.5, ease: 'easeInOut' },
-              }}
-              whileTap={{
-                scale: 1.05,
-                backgroundColor: '#fff',
-                color: '#718096',
-                transition: { duration: 0.5, ease: 'easeInOut' },
-              }}
-              initial={{
-                scale: 1,
-                backgroundColor: 'transparent',
-                color: '#fff',
-              }}
-              className="inline-block border-solid border-2 border-white text-lg font-semibold uppercase py-2 px-6 rounded-full"
-            >
-              {buttonText}
-            </motion.a>
+          <Link href="/page-2">
+            <a>
+              <Button className="text-lg font-semibold">{buttonText}</Button>
+            </a>
           </Link>
         </motion.p>
 
