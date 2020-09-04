@@ -10,9 +10,12 @@
   "dependencies": {
     "clsx": "^1.1.1",
     "framer-motion": "^2.6.5",
+    "install": "^0.13.0",
     "next": "9.5.3",
+    "npm": "^6.14.8",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-tsparticles": "^1.17.10",
     "styled-components": "^5.1.1",
     "tailwindcss": "^1.7.6"
   },

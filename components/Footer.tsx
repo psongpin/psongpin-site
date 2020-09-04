@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   const router = useRouter()
   return (
     <footer
-      className={cx({
+      className={cx('z-10', {
         'absolute bottom-0 left-0 right-0': router.pathname === '/',
       })}
     >

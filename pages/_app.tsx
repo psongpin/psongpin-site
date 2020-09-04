@@ -6,6 +6,7 @@ import styled from 'styled-components'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import ParticlesBg from 'components/ParticlesBg'
 
 import 'styles/tailwind.css'
 
@@ -30,12 +31,13 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       </Head>
       <AppWrapper className="min-h-screen relative">
         <Header />
-        <main>
+        <main className="z-10 relative">
           <AnimatePresence exitBeforeEnter>
             <Component key={router.asPath} {...pageProps} />
           </AnimatePresence>
         </main>
         <Footer />
+        <ParticlesBg />
       </AppWrapper>
     </>
   )
