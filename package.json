@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "clsx": "^1.1.1",
+    "framer-motion": "^2.6.5",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
