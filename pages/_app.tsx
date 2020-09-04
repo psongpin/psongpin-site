@@ -4,6 +4,9 @@ import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
 import styled from 'styled-components'
 
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+
 import 'styles/tailwind.css'
 
 const AppWrapper = styled.div`
@@ -25,12 +28,14 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           rel="stylesheet"
         />
       </Head>
-      <AppWrapper className="min-h-screen">
+      <AppWrapper className="min-h-screen relative">
+        <Header />
         <main>
           <AnimatePresence exitBeforeEnter>
             <Component key={router.asPath} {...pageProps} />
           </AnimatePresence>
         </main>
+        <Footer />
       </AppWrapper>
     </>
   )
