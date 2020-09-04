@@ -25,7 +25,7 @@ const Home: React.FC = () => {
           }}
           className="text-center mt-8"
         >
-          <Link href="/page-2">
+          <Link href="/contact">
             <a>
               <Button className="text-lg font-semibold">{buttonText}</Button>
             </a>

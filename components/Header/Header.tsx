@@ -6,7 +6,7 @@ import MenuToggle from 'components/Header/MenuToggle'
 const LINKS = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/' },
-  { label: 'Contact', path: '/' },
+  { label: 'Contact', path: '/contact' },
   { label: 'Blog', path: '/' },
 ]
 
@@ -98,7 +98,13 @@ const Header: React.FC = () => {
                       className="block text-right"
                     >
                       <Link href={link.path}>
-                        <a className="inline-block text-white text-xl p-2">
+                        <a
+                          className="inline-block text-white text-xl p-2 focus:outline-none"
+                          onClick={() => toggleMenuVisibility()}
+                          onKeyPress={() => toggleMenuVisibility()}
+                          role="link"
+                          tabIndex={0}
+                        >
                           {link.label}
                         </a>
                       </Link>
