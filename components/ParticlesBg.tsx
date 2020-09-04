@@ -1,8 +1,15 @@
 import Particles from 'react-tsparticles'
+import styled from 'styled-components'
+
+const ParticleWrapper = styled.div`
+  #tsparticles {
+    height: 100%;
+  }
+`
 
 const ParticlesBg: React.FC = () => {
   return (
-    <div className="fixed inset-0 z-0 w-screen h-screen">
+    <ParticleWrapper className="fixed inset-0 z-0 w-screen h-screen">
       <Particles
         options={{
           fps_limit: 60,
@@ -66,7 +73,7 @@ const ParticlesBg: React.FC = () => {
           retina_detect: true,
         }}
       />
-    </div>
+    </ParticleWrapper>
   )
 }
 
