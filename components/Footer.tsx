@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         'absolute bottom-0 left-0 right-0': router.pathname === '/',
       })}
     >
-      <div className="container text-center text-white py-4">
+      <div className="container text-center text-white py-6 text-sm">
         <motion.p
           animate={{ opacity: [0, 1] }}
           transition={{ duration: 1.2, ease: 'easeInOut' }}
