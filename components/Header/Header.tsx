@@ -48,7 +48,7 @@ const itemVariants: Variants = {
 const Header: React.FC = () => {
   const [menuVisibility, toggleMenuVisibility] = useCycle('closed', 'open')
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 overflow-x-hidden">
+    <header className="fixed top-0 left-0 right-0 z-50">
       <div className="container flex justify-between items-center py-4">
         <motion.div
           initial={{ opacity: 0, x: '-100%' }}
