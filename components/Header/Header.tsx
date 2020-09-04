@@ -11,7 +11,7 @@ const LINKS = [
 ]
 
 const Nav = styled(motion.nav)`
-  background-color: rgba(26, 32, 44, 0.5);
+  background-color: rgba(26, 32, 44, 0.8);
 `
 
 const navVariants: Variants = {
@@ -48,23 +48,37 @@ const itemVariants: Variants = {
 const Header: React.FC = () => {
   const [menuVisibility, toggleMenuVisibility] = useCycle('closed', 'open')
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header className="fixed top-0 left-0 right-0 z-50 overflow-x-hidden">
       <div className="container flex justify-between items-center py-4">
-        <Link href="/">
-          <a style={{ width: 50, height: 50 }}>
-            <img
-              src="/images/PaulSimonOngpin.jpg"
-              alt="Paul Simon Ongpin"
-              className="rounded-full"
-              style={{ boxShadow: '0 0 0px 2px #fff;' }}
-            />
-          </a>
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, x: '-100%' }}
+          animate={{ opacity: 1, x: '0%' }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          style={{ width: 50, height: 50 }}
+        >
+          <Link href="/">
+            <a>
+              <img
+                src="/images/PaulSimonOngpin.jpg"
+                alt="Paul Simon Ongpin"
+                className="rounded-full"
+                style={{ boxShadow: '0 0 0px 2px #fff;' }}
+              />
+            </a>
+          </Link>
+        </motion.div>
 
-        <MenuToggle
-          menuVisibility={menuVisibility}
-          onClick={() => toggleMenuVisibility()}
-        />
+        <motion.div
+          initial={{ opacity: 0, x: '100%' }}
+          animate={{ opacity: 1, x: '0%' }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className="z-10"
+        >
+          <MenuToggle
+            menuVisibility={menuVisibility}
+            onClick={() => toggleMenuVisibility()}
+          />
+        </motion.div>
 
         <AnimatePresence>
           {menuVisibility === 'open' && (

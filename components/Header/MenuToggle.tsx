@@ -6,7 +6,7 @@ const MenuToggle: React.FC<{
 }> = ({ onClick, menuVisibility }) => (
   <button
     type="button"
-    className="appearance-none focus:outline-none z-10 border-solid border-2 border-white text-white uppercase text-sm p-2 rounded-full"
+    className="appearance-none focus:outline-none border-solid border-2 border-white text-white uppercase text-sm p-2 rounded-full"
     onClick={onClick}
     style={{ width: 100 }}
   >
