@@ -5,6 +5,7 @@ const Button: React.FC<React.HTMLProps<HTMLButtonElement>> = ({
   children,
   className,
   onClick,
+  style,
 }) => (
   <motion.button
     whileHover={{
@@ -29,6 +30,7 @@ const Button: React.FC<React.HTMLProps<HTMLButtonElement>> = ({
       'appearance-none focus:outline-none inline-block border-solid border-2 border-white py-2 px-6 rounded-full',
       className
     )}
+    style={style}
   >
     {children}
   </motion.button>
