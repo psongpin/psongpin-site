@@ -1,43 +1,45 @@
 import { AppProps } from 'next/app'
-import { useState, FC } from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import { library, config } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { useRouter } from 'next/router'
+import Head from 'next/head'
+import { AnimatePresence } from 'framer-motion'
+import styled from 'styled-components'
 
-import GlobalFontStyle from '../css/font'
-import ThemeModeContext from '../css/context'
-import theme from '../css/theme'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import { ThemeMode } from '../types/theme'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+import ParticlesBg from 'components/ParticlesBg'
 
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import '../css/tailwind.css'
+import 'styles/tailwind.css'
 
-config.autoAddCss = false
-library.add(fab, fas)
-
-const Main = styled.main`
-  // 1vh - header + footer height
-  min-height: calc(100vh - 9rem);
-  background-color: ${(scprops): string => scprops.theme.colors.bg};
+const AppWrapper = styled.div`
+  background: linear-gradient(
+    45deg,
+    rgb(123, 198, 226) 0%,
+    rgb(253, 182, 198) 50%,
+    rgb(255, 190, 116) 100%
+  );
+  grid-template-rows: auto 1fr auto;
 `
 
-const App: FC<AppProps> = ({ Component, pageProps }) => {
-  const [themeMode, setThemeMode] = useState<ThemeMode>('dark')
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+  const router = useRouter()
   return (
     <>
-      <ThemeModeContext.Provider value={{ themeMode, setThemeMode }}>
-        <GlobalFontStyle />
-        <ThemeProvider theme={theme[themeMode]}>
-          <Header />
-          <Main className="transition-all duration-200 ease-in-out">
-            <Component {...pageProps} />
-          </Main>
-          <Footer />
-        </ThemeProvider>
-      </ThemeModeContext.Provider>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <AppWrapper className="min-h-screen relative grid">
+        <Header />
+        <main className="z-10 relative">
+          <AnimatePresence exitBeforeEnter>
+            <Component key={router.asPath} {...pageProps} />
+          </AnimatePresence>
+        </main>
+        <Footer />
+        <ParticlesBg />
+      </AppWrapper>
     </>
   )
 }
