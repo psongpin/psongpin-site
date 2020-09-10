@@ -17,6 +17,7 @@ const AppWrapper = styled.div`
     rgb(253, 182, 198) 50%,
     rgb(255, 190, 116) 100%
   );
+  grid-template-rows: auto 1fr auto;
 `
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
@@ -29,7 +30,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
           rel="stylesheet"
         />
       </Head>
-      <AppWrapper className="min-h-screen relative">
+      <AppWrapper className="min-h-screen relative grid">
         <Header />
         <main className="z-10 relative">
           <AnimatePresence exitBeforeEnter>

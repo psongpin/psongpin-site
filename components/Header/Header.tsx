@@ -1,6 +1,15 @@
+import { useState } from 'react'
 import Link from 'next/link'
-import { useCycle, AnimatePresence, motion, Variants } from 'framer-motion'
+import {
+  useCycle,
+  AnimatePresence,
+  motion,
+  Variants,
+  useViewportScroll,
+} from 'framer-motion'
 import styled from 'styled-components'
+import cx from 'clsx'
+
 import MenuToggle from 'components/Header/MenuToggle'
 
 const LINKS = [
@@ -46,9 +55,28 @@ const itemVariants: Variants = {
 }
 
 const Header: React.FC = () => {
+  const [isOnTop, setIsOnTop] = useState(true)
+  const { scrollY } = useViewportScroll()
   const [menuVisibility, toggleMenuVisibility] = useCycle('closed', 'open')
+
+  scrollY.onChange(() => {
+    if (isOnTop && scrollY.get() > 0) {
+      setIsOnTop(false)
+    }
+
+    if (!isOnTop && scrollY.get() < 1) {
+      setIsOnTop(true)
+    }
+  })
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header
+      className={cx(
+        'sticky top-0 z-50 transition-all duration-700 ease-in-out',
+        isOnTop && 'bg-transparent',
+        !isOnTop && 'bg-gray-700 bg-opacity-50'
+      )}
+    >
       <div className="container flex justify-between items-center py-4">
         <motion.div
           initial={{ opacity: 0, x: '-100%' }}
@@ -62,7 +90,7 @@ const Header: React.FC = () => {
                 src="/images/PaulSimonOngpin.jpg"
                 alt="Paul Simon Ongpin"
                 className="rounded-full"
-                style={{ boxShadow: '0 0 0px 2px #fff;' }}
+                style={{ boxShadow: '0 0 0px 2px #fff' }}
               />
             </a>
           </Link>

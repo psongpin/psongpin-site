@@ -1,15 +1,10 @@
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-import cx from 'clsx'
 
 const Footer: React.FC = () => {
-  const router = useRouter()
+  // const router = useRouter()
   return (
-    <footer
-      className={cx('z-10', {
-        'absolute bottom-0 left-0 right-0': router.pathname === '/',
-      })}
-    >
+    <footer className="z-10">
       <div className="container text-center text-white py-6 text-sm">
         <motion.p
           animate={{ opacity: [0, 1] }}
