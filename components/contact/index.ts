@@ -1,4 +1,5 @@
 import PageWrapper from './PageWrapper'
+import ContactList from './ContactList'
+import ContactForm from './ContactForm'
 
-// eslint-disable-next-line import/prefer-default-export
-export { PageWrapper }
+export { PageWrapper, ContactList, ContactForm }

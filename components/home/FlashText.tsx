@@ -43,7 +43,7 @@ const FlashText: React.FC<Props> = ({ isTop }) => {
               },
             }}
             transition={{ duration: 1, ease: 'easeInOut' }}
-            className="text-4xl lg:text-6xl font-bold font-heading absolute inset-0"
+            className="text-4xl lg:text-6xl font-black font-heading absolute inset-0"
           >
             {text}
           </motion.p>

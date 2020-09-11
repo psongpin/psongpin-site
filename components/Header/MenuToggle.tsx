@@ -7,6 +7,7 @@ const MenuToggle: React.FC<{
   menuVisibility: string
 }> = ({ onClick, menuVisibility }) => (
   <Button
+    btnType="transparent-light"
     type="button"
     className="uppercase text-sm p-2"
     onClick={onClick}

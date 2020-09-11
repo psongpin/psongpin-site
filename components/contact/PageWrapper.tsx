@@ -18,7 +18,7 @@ const PageWrapper: React.FC = ({ children }) => (
     initial="initial"
     animate="start"
     exit="exit"
-    className="flex items-center h-screen py-16"
+    className="flex items-center h-full py-16"
   >
     {children}
   </motion.div>

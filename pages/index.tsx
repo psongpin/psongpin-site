@@ -27,7 +27,12 @@ const Home: React.FC = () => {
         >
           <Link href="/contact">
             <a>
-              <Button className="text-lg font-semibold">{buttonText}</Button>
+              <Button
+                btnType="transparent-light"
+                className="text-lg font-semibold"
+              >
+                {buttonText}
+              </Button>
             </a>
           </Link>
         </motion.p>

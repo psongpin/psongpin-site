@@ -11,12 +11,9 @@ import ParticlesBg from 'components/ParticlesBg'
 import 'styles/tailwind.css'
 
 const AppWrapper = styled.div`
-  background: linear-gradient(
-    45deg,
-    rgb(123, 198, 226) 0%,
-    rgb(253, 182, 198) 50%,
-    rgb(255, 190, 116) 100%
-  );
+  background-color: #f89b9e;
+  background-image: linear-gradient(315deg, #f89b9e 0%, #c9d9ff 74%);
+
   grid-template-rows: auto 1fr auto;
 `
 
