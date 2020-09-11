@@ -72,7 +72,7 @@ const Header: React.FC = () => {
   return (
     <header
       className={cx(
-        'sticky top-0 z-50 transition-all duration-700 ease-in-out',
+        'sticky top-0 z-50 transition-all duration-700 ease-in-out overflow-x-hidden',
         isOnTop && 'bg-transparent',
         !isOnTop && 'bg-gray-700 bg-opacity-50'
       )}
