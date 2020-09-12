@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
         <div
           className={cx(
             'lg:col-span-6',
-            'bg-gray-800 bg-opacity-50',
+            'bg-gray-800 bg-opacity-75',
             'px-4 md:px-8 py-16',
             'rounded-tl-lg rounded-tr-lg lg:rounded-tr-none lg:rounded-bl-lg',
             'text-gray-300'
@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
         <div
           className={cx(
             'lg:col-span-6',
-            'bg-white bg-opacity-50',
+            'bg-white bg-opacity-75',
             'px-4 md:px-8 py-16',
             'rounded-br-lg rounded-bl-lg lg:rounded-bl-none lg:rounded-tr-lg',
             'text-gray-600'

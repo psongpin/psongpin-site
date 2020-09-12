@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Link from 'next/link'
 import {
   useCycle,
@@ -6,9 +5,9 @@ import {
   motion,
   Variants,
   useViewportScroll,
+  useTransform,
 } from 'framer-motion'
 import styled from 'styled-components'
-import cx from 'clsx'
 
 import MenuToggle from 'components/Header/MenuToggle'
 
@@ -20,7 +19,7 @@ const LINKS = [
 ]
 
 const Nav = styled(motion.nav)`
-  background-color: rgba(26, 32, 44, 0.8);
+  background-color: rgba(26, 32, 44, 0.75);
 `
 
 const navVariants: Variants = {
@@ -55,32 +54,21 @@ const itemVariants: Variants = {
 }
 
 const Header: React.FC = () => {
-  const [isOnTop, setIsOnTop] = useState(true)
   const { scrollY } = useViewportScroll()
+  const bg = useTransform(scrollY, value =>
+    value > 0 ? 'rgba(26, 32, 44, 0.75)' : 'transparent'
+  )
   const [menuVisibility, toggleMenuVisibility] = useCycle('closed', 'open')
 
-  scrollY.onChange(() => {
-    if (isOnTop && scrollY.get() > 0) {
-      setIsOnTop(false)
-    }
-
-    if (!isOnTop && scrollY.get() < 1) {
-      setIsOnTop(true)
-    }
-  })
-
   return (
-    <header
-      className={cx(
-        'sticky top-0 z-50 transition-all duration-700 ease-in-out overflow-x-hidden',
-        isOnTop && 'bg-transparent',
-        !isOnTop && 'bg-gray-700 bg-opacity-50'
-      )}
+    <motion.header
+      style={{ backgroundColor: bg }}
+      className="sticky top-0 z-50 transition-all duration-700 ease-in-out"
     >
       <div className="container flex justify-between items-center py-4">
         <motion.div
-          initial={{ opacity: 0, x: '-100%' }}
-          animate={{ opacity: 1, x: '0%' }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeInOut' }}
           style={{ width: 50, height: 50 }}
         >
@@ -97,8 +85,8 @@ const Header: React.FC = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: '100%' }}
-          animate={{ opacity: 1, x: '0%' }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeInOut' }}
           className="relative z-10"
         >
@@ -144,7 +132,7 @@ const Header: React.FC = () => {
           )}
         </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   )
 }
 
