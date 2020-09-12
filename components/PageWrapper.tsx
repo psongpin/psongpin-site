@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion'
 
+type Props = {
+  className: string
+}
+
 const pageVariants = {
   initial: { opacity: 0 },
   start: {
@@ -12,13 +16,13 @@ const pageVariants = {
   },
 }
 
-const PageWrapper: React.FC = ({ children }) => (
+const PageWrapper: React.FC<Props> = ({ children, className }) => (
   <motion.div
     variants={pageVariants}
     initial="initial"
     animate="start"
     exit="exit"
-    className="flex items-center h-full py-16"
+    className={className}
   >
     {children}
   </motion.div>

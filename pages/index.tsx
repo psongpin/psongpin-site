@@ -1,12 +1,14 @@
-import { PageWrapper, AnimatedName, Divider, FlashText } from 'components/home'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+
+import { AnimatedName, Divider, FlashText } from 'components/home'
 import Button from 'components/Button'
+import PageWrapper from 'components/PageWrapper'
 
 const Home: React.FC = () => {
   const buttonText = `Let's have a chat!`
   return (
-    <PageWrapper>
+    <PageWrapper className="flex items-center h-full py-16">
       <div className="container relative">
         <div className="text-white text-center uppercase">
           <FlashText isTop />

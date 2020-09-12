@@ -1,10 +1,12 @@
 /* eslint-disable react/jsx-curly-brace-presence */
 import cx from 'clsx'
-import { PageWrapper, ContactList, ContactForm } from 'components/contact'
+
+import { ContactList, ContactForm } from 'components/contact'
+import PageWrapper from 'components/PageWrapper'
 
 const Contact: React.FC = () => {
   return (
-    <PageWrapper>
+    <PageWrapper className="flex items-center h-full py-16">
       <div className="container relative grid lg:grid-cols-12">
         <div
           className={cx(
