@@ -30,7 +30,7 @@ const ParticlesBg: React.FC = () => {
               color: 'random',
               distance: 300,
               enable: true,
-              opacity: 0.3,
+              opacity: 0.2,
               width: 1,
             },
             move: {
@@ -51,7 +51,7 @@ const ParticlesBg: React.FC = () => {
                 sync: false,
               },
               random: true,
-              value: 0.5,
+              value: 0.3,
             },
             shape: {
               type: 'circle',
