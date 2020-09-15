@@ -17,7 +17,7 @@ const Divider: React.FC = () => (
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.7, ease: 'easeInOut' }}
-      className="mx-4 text-3xl leading-none"
+      className="mx-4 text-3xl font-medium leading-none"
     >
       &times;
     </motion.span>

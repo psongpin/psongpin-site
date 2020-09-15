@@ -11,7 +11,7 @@ const AnimatedName: React.FC<Props> = ({ text, inverted = false }) => (
     initial={{ opacity: 0, y: inverted ? '100%' : '-100%' }}
     animate={{ opacity: 1, y: '0%' }}
     transition={{ duration: 0.7, ease: 'easeInOut' }}
-    className={cx('text-lg lg:text-2xl', {
+    className={cx('text-lg lg:text-2xl font-medium', {
       'mb-2 lg:mb-6': inverted,
       'mt-2 lg:mt-6': !inverted,
     })}

@@ -9,8 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
-        heading: ['Raleway', ...defaultTheme.fontFamily.sans],
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
     },
     container: {

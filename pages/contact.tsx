@@ -17,9 +17,9 @@ const Contact: React.FC = () => {
             'text-gray-600'
           )}
         >
-          <h1 className="text-4xl font-black mb-4">{`Let's have a chat!`}</h1>
+          <h1 className="text-4xl font-bold mb-4">{`Let's have a chat!`}</h1>
 
-          <p className="text-xl mb-6">
+          <p className="font-bold mb-6">
             Get in touch with me through these contacts:
           </p>
 
