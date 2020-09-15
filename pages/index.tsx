@@ -29,10 +29,7 @@ const Home: React.FC = () => {
         >
           <Link href="/contact">
             <a>
-              <Button
-                btnType="transparent-light"
-                className="text-lg font-semibold"
-              >
+              <Button btnType="transparent-light" className="text-lg">
                 {buttonText}
               </Button>
             </a>

@@ -4,7 +4,7 @@ const ContactForm: React.FC = () => (
   <form action="https://formspree.io/mwkrggql" method="POST" className="w-full">
     <div className="mb-6">
       <label htmlFor="email">
-        <div className="font-bold mb-2">Email:</div>
+        <div className="mb-2">Email:</div>
         <input
           name="email"
           type="email"
@@ -16,7 +16,7 @@ const ContactForm: React.FC = () => (
 
     <div className="mb-6">
       <label htmlFor="subject">
-        <div className="font-bold mb-2">Subject:</div>
+        <div className="mb-2">Subject:</div>
         <input
           name="subject"
           type="text"
@@ -28,7 +28,7 @@ const ContactForm: React.FC = () => (
 
     <div className="mb-6">
       <label htmlFor="message">
-        <div className="font-bold mb-2">Message:</div>
+        <div className="mb-2">Message:</div>
         <textarea
           name="message"
           required

@@ -29,7 +29,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       </Head>
       <AppWrapper className="min-h-screen relative grid">
         <Header />
-        <main className="z-10 relative overflow-x-hidden">
+        <main className="z-10 relative">
           <AnimatePresence exitBeforeEnter>
             <Component key={router.asPath} {...pageProps} />
           </AnimatePresence>

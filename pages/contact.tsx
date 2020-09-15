@@ -11,13 +11,13 @@ const Contact: React.FC = () => {
         <div
           className={cx(
             'lg:col-span-6',
-            'bg-gray-800 bg-opacity-75',
+            'bg-gray-100',
             'px-4 md:px-8 py-16',
             'rounded-tl-lg rounded-tr-lg lg:rounded-tr-none lg:rounded-bl-lg',
-            'text-gray-300'
+            'text-gray-600'
           )}
         >
-          <h1 className="text-4xl text-purple-200 font-black mb-4">{`Let's have a chat!`}</h1>
+          <h1 className="text-4xl font-black mb-4">{`Let's have a chat!`}</h1>
 
           <p className="text-xl mb-6">
             Get in touch with me through these contacts:
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
         <div
           className={cx(
             'lg:col-span-6',
-            'bg-white bg-opacity-75',
+            'bg-white',
             'px-4 md:px-8 py-16',
             'rounded-br-lg rounded-bl-lg lg:rounded-bl-none lg:rounded-tr-lg',
             'text-gray-600'

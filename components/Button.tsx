@@ -14,47 +14,20 @@ const Button: React.FC<Props & React.HTMLProps<HTMLButtonElement>> = ({
 }) => {
   const buttonAttrs = {
     primary: {
-      classname: 'border-red-400 bg-red-400 text-white',
-      initial: {
-        opacity: 1,
-      },
-      hover: {
-        opacity: 0.75,
-        transition: { duration: 0.5, ease: 'easeInOut' },
-      },
-      tap: {
-        opacity: 0.75,
-        transition: { duration: 0.5, ease: 'easeInOut' },
-      },
+      classname:
+        'border-gray-600 bg-gray-600 text-white opacity-100 hover:opacity-75',
     },
 
     'transparent-light': {
-      classname: 'border-white',
-      initial: {
-        backgroundColor: 'rgba(255, 255, 255, 0)',
-        color: '#fff',
-      },
-      hover: {
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        color: '#718096',
-        transition: { duration: 0.5, ease: 'easeInOut' },
-      },
-      tap: {
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        color: '#718096',
-        transition: { duration: 0.5, ease: 'easeInOut' },
-      },
+      classname: 'border-white text-white hover:bg-white hover:text-gray-600',
     },
   }
 
   return (
     <motion.button
-      whileHover={buttonAttrs[btnType].hover}
-      whileTap={buttonAttrs[btnType].tap}
-      initial={buttonAttrs[btnType].initial}
       onClick={onClick}
       className={cx(
-        'appearance-none focus:outline-none inline-block border-solid border-2 py-2 px-6 rounded-full',
+        'appearance-none focus:outline-none inline-block border-solid border-2 py-2 px-6 rounded-full transition-all duration-500 ease-in-out',
         buttonAttrs[btnType].classname,
         className
       )}
