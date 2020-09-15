@@ -104,6 +104,7 @@ const Header: React.FC = () => {
               animate="open"
               exit="closed"
               className="fixed inset-0 bg-gray-900"
+              onClick={() => toggleMenuVisibility()}
             >
               <div className="container flex justify-end pt-20">
                 <motion.ul variants={listVariants}>
@@ -114,13 +115,7 @@ const Header: React.FC = () => {
                       className="block text-right"
                     >
                       <Link href={link.path}>
-                        <a
-                          className="inline-block text-white text-xl p-2 focus:outline-none"
-                          onClick={() => toggleMenuVisibility()}
-                          onKeyPress={() => toggleMenuVisibility()}
-                          role="link"
-                          tabIndex={0}
-                        >
+                        <a className="inline-block text-white text-xl p-2 focus:outline-none">
                           {link.label}
                         </a>
                       </Link>
