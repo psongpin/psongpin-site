@@ -18,19 +18,27 @@ export const professionalExp: {
   description: string
 }[] = [
   {
+    company: 'Freelance Front-end Developer',
+    info: 'Present (Remote / Part-time) ',
+    description:
+      'As a freelancer, I worked on projects that were best suited for my skill sets with React and similar library stacks like Apollo-Graphql, Tailwind, Next.js',
+  },
+  {
+    company: 'High Output Ventures — Front-end Software Engineer',
+    info: `June 2020 - December 2020 (Remote / Full-time - Singapore / Pakistan) ${getTimeDiff(
+      moment(new Date('2020-12-31')),
+      moment(new Date('2020-06-1'))
+    )}`,
+    description:
+      'For this company, most of my contributions were on the rebuilding of their main website. I was also the one who introduced Next.JS, Tailwind CSS front-end stack for their future projects. I was the main proponent of their internal design system with Tailwind CSS.',
+  },
+  {
     company: 'Laguro - Front-end Software Engineer',
     info: `August 2018 - December 2019 (Remote / Full-time - San Leandro, California) ${getTimeDiff(
       moment(new Date('2019-12-9')),
       moment(new Date('2018-08-30'))
     )}`,
-    description:
-      'At Laguro, my primary job as a Front-end Software Engineer is build UI interfaces for the dental industry product application of the company. We engineered the applications using React-Apollo stacks. My core competency in the team is my ability to deal with complex UI styling.',
-  },
-  {
-    company: 'Freelance Front-end Developer',
-    info: 'Present (Remote / Part-time) ',
-    description:
-      'As a Freelance Developer, I do all sorts of front-end projects ranging from Design to HTML/CSS Convertion, Static Site Development (currently using Gatsby but used Wordpress before), Front-end troubleshooting, and UI prototype development.',
+    description: `Worked for the startup company's product and internal tools for dental care as Front End Developer. Frontend stack includes: Apollo, GraphQL, React, NextJS. Mainly worked on the dental portal part of the company. It was a tool mainly built to support dental processes and patient record documentation.`,
   },
   {
     company: 'MergeCommit Inc. - Front-end Software Engineer',
@@ -39,7 +47,7 @@ export const professionalExp: {
       moment(new Date('2017-12-5'))
     )}`,
     description:
-      'During the course of my stay at the company, I helped a team of software engineers to build a Multi-Platform Crypto Currency Exchange.  This is a two-facing application and built with multiple microservices. Started as a React-Redux architecture but later on refactored as React-Apollo application to harness the power and potential of GraphQL technology. In the company’s case, it boosted the quality of developer experience (DX) which resulted to faster iteration and shipping to production.',
+      'Worked as Front End Developer for blockchain-based products and services that MergeCommit is offering. Frontend stack includes: Apollo, GraphQL, React. My work focused on building a white-labeled solution for creating a cryptocurrency trading platform. Most of my contributions were on the UI implementation and reworking of the old redux architecture to Graphql-based front-end and React hooks (which at this time period was experimental and a new feature).',
   },
   {
     company: 'Starfish Web Design Philippines - Front-end Web Developer',
@@ -48,7 +56,7 @@ export const professionalExp: {
       moment(new Date('2015-11-23'))
     )}`,
     description:
-      'My experience in the digital/design agency involves more on the design and UI aspects of web development. I worked as their Front-end developer mainly focusing on Wordpress Theme development and Responsive Web Design. For 2 years, I gained a lot of experience with dealing complex yet aesthetic designs for the web. I build my expertise with CSS during my stay in the company.',
+      'Wordpress Theme Developer and UI developer of the company. Converted elegant and well-crafted designs into Responsive Websites. Maintained a legacy site written in Laravel, JQuery and Vanilla Javascript.',
   },
   {
     company:
@@ -57,7 +65,7 @@ export const professionalExp: {
       moment(),
       moment(new Date('2017-2-1'))
     )}`,
-    description: `For the Manila group, I have been actively participating on monthly Meetups. I usually present talks about CSS stuff and basic Front-end skill development. We have an awesome 3k+ members in th community! Currently since my relocation to Batangas City, I am trying to rebuild the same community in my place. I am still in the doorsteps of it but, I have been talking a lot with schools / colleges about the possibility of collaboration between Free Code Camp and their campus!`,
+    description: `Collaborated with fellow members and admins to organize events and meetups. Volunteered as a speaker for Basic Web Development concepts for new developers and career shifters.`,
   },
 ]
 
@@ -76,18 +84,21 @@ export const skills: {
   ],
   set2: ['Javascript (ES6)', 'React.js', 'JQuery', 'Basic Node.js'],
   set3: [
-    'React Router',
+    'Next.js',
     'React-Apollo',
-    'Formik',
     'Styled-Components / Emotion',
+    'Tailwind CSS',
+    'Gatsby',
     'Ant-Design',
-    'Recompose',
-    'Lodash',
+    'React Router',
+    'Framer-motion',
+    'React-Hook-Form',
   ],
   set4: [
-    'Gatsby',
+    'Formik',
     'React Testing Library / Enzyme',
     'Jest',
+    'Lodash',
     'Redux',
     'Render Props and HOC patterns',
     'React Context API',

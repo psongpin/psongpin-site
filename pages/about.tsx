@@ -49,9 +49,8 @@ const About: FC<{}> = () => {
               {`. I make my living as a Front-end Developer for ${getTimeDiff(
                 moment(),
                 moment(new Date('2015-11-23'))
-              )}. I self-learned React and its ecosystem. I used to be a
-                Wordpress Theme developer for 2 years before jumping in the React
-                bandwagon/hype. I really love doing CSS stuff. I must say, I made the
+              )}. I am currently working as a React Front-end Developer. Prior to that, I used to be a
+                Wordpress Theme developer for 2 years. I really love doing CSS stuff. I must say, I made the
                 right choice!`}
             </Text.p>
             <Text.p>For personal things, I:</Text.p>

@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ProfExp: FC<Props> = ({ company, info, description }) => (
-  <div className="mb-6">
+  <div className="mb-12">
     <Heading.h3 className="text-lg m-0 leading-normal font-bold">
       {company}
     </Heading.h3>
