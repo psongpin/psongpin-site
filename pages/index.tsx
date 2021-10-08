@@ -1,7 +1,7 @@
-import Container from 'components/common/Container'
+import HeroSection from 'components/Homepage/HeroSection'
 
 const Home: React.FC = () => {
-  return <Container>test</Container>
+  return <HeroSection />
 }
 
 export default Home
