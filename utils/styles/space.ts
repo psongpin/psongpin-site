@@ -1,7 +1,7 @@
 export const space = {
   0: '0px',
   px: '1px',
-  half: '0.125rem',
+  '0_point_5': '0.125rem',
   1: '0.25rem',
   '1_point_5': '0.375rem',
   2: '0.5rem',
