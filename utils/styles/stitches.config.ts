@@ -1,5 +1,4 @@
 import { createStitches } from '@stitches/react'
-import { gray } from '@radix-ui/colors'
 
 import { space } from './space'
 import { fontSizes } from './fontSizes'
@@ -13,6 +12,8 @@ import { radii } from './radii'
 import { shadows } from './shadows'
 import { zIndices } from './zIndices'
 import { utils } from './utils'
+import { colors } from './colors'
+import { transitions } from './transitions'
 
 export const {
   styled,
@@ -25,9 +26,7 @@ export const {
   config,
 } = createStitches({
   theme: {
-    colors: {
-      ...gray,
-    },
+    colors,
     space,
     fontSizes,
     fonts,
@@ -40,7 +39,7 @@ export const {
     radii,
     shadows,
     zIndices,
-    transitions: {},
+    transitions,
   },
   media: {
     sm: '(min-width: 640px)',
