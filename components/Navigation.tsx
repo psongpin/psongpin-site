@@ -9,6 +9,7 @@ import {
 } from '@radix-ui/react-icons'
 import { keyframes } from '@stitches/react'
 import Link from 'next/link'
+import { motion, Variants } from 'framer-motion'
 
 import Button from 'components/common/Button'
 import { styled } from 'utils/styles/stitches.config'
@@ -26,7 +27,7 @@ const links = [
     icon: <FileTextIcon width={20} height={20} />,
   },
   {
-    href: '/#home',
+    href: '/#contact',
     label: 'Contact',
     icon: <ChatBubbleIcon width={20} height={20} />,
   },
@@ -49,7 +50,7 @@ const NavToggle = styled(Button, {
 })
 
 const Overlay = styled(Dialog.Overlay, {
-  backgroundColor: '$blackA11',
+  backgroundColor: '$blackA12',
   position: 'fixed',
   inset: 0,
   '@media (prefers-reduced-motion: no-preference)': {
@@ -88,14 +89,15 @@ const ContentDescription = styled(Dialog.Description, {
   marginBottom: '$3',
 })
 
-const Divider = styled('hr', {
+const Divider = styled(motion.hr, {
   borderColor: '$slateAppBg',
   my: '$3',
+  transformOrigin: 'right',
 })
 
 const NavLink = styled('a', {
   display: 'flex',
-  alignItems: 'center',
+  alignItemTextVariantss: 'center',
   justifyContent: 'flex-end',
   py: '$1_point_5',
   color: '$slateAppBg',
@@ -113,6 +115,30 @@ const NavLink = styled('a', {
   },
 })
 
+const AnimatedSpan = styled(motion.span, {
+  display: 'block',
+})
+
+const containerVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+}
+
+const itemDividerVariants: Variants = {
+  hidden: { opacity: 0, scaleX: 0 },
+  show: { opacity: 1, scaleX: 1 },
+}
+
+const itemTextVariants: Variants = {
+  hidden: { opacity: 0, y: -8 },
+  show: { opacity: 1, y: 0 },
+}
+
 const Navigation: React.FC = () => {
   return (
     <Dialog.Root>
@@ -128,24 +154,35 @@ const Navigation: React.FC = () => {
       </Dialog.Trigger>
       <Overlay />
       <Content>
-        <ContentTitle>Menu</ContentTitle>
-        <Divider />
-        <ContentDescription>Navigate on these pages:</ContentDescription>
-        <nav>
-          <ul>
-            {links.map(link => (
-              <li key={link.label}>
-                <Link href={link.href} passHref>
-                  <NavLink>
-                    <span>{link.label}</span>
-                    <span>{link.icon}</span>
-                  </NavLink>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+        >
+          <ContentTitle>
+            <AnimatedSpan variants={itemTextVariants}>Menu</AnimatedSpan>
+          </ContentTitle>
+          <Divider variants={itemDividerVariants} />
+          <ContentDescription>
+            <AnimatedSpan variants={itemTextVariants}>
+              Navigate on these pages:
+            </AnimatedSpan>
+          </ContentDescription>
+          <nav>
+            <ul>
+              {links.map(link => (
+                <motion.li key={link.label} variants={itemTextVariants}>
+                  <Link href={link.href} passHref>
+                    <NavLink>
+                      <span>{link.label}</span>
+                      <span>{link.icon}</span>
+                    </NavLink>
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </nav>
+        </motion.div>
         <Dialog.Close asChild>
           <NavToggle
             btnType="outlined"
