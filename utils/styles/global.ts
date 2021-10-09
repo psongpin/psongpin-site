@@ -14,6 +14,7 @@ const globals = {
     tabSize: 4,
     lineHeight: 1.5,
     fontFamily: fonts.sans,
+    color: '$highContrastText',
   },
   ':where(body)': {
     fontFamily: 'inherit',
