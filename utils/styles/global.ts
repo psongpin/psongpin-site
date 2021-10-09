@@ -15,6 +15,7 @@ const globals = {
     lineHeight: 1.5,
     fontFamily: fonts.sans,
     color: '$highContrastText',
+    scrollBehavior: 'smooth',
   },
   ':where(body)': {
     fontFamily: 'inherit',

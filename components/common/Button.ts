@@ -46,6 +46,11 @@ const Button = styled('button', {
         fontSize: '$lg',
       },
     },
+    rounded: {
+      true: {
+        borderRadius: '$full',
+      },
+    },
   },
 
   defaultVariants: {

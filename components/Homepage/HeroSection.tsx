@@ -54,7 +54,7 @@ const ActionFrame = styled('div', {
 
 const HeroSection: React.FC = () => {
   return (
-    <Frame>
+    <Frame id="home">
       <Container>
         <Title>
           <SolidWord>No one</SolidWord> should go the web{' '}

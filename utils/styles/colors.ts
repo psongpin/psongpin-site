@@ -1,7 +1,8 @@
-import { slate } from '@radix-ui/colors'
+import { blackA, slate } from '@radix-ui/colors'
 
 export const colors = {
   ...slate,
+  ...blackA,
   // Slate alias
   slateAppBg: '$slate1',
   slateSubtleBg: '$slate2',

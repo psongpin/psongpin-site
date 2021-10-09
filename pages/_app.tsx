@@ -4,6 +4,7 @@ import AppFrame from 'components/AppFrame'
 import Footer from 'components/Footer'
 
 import globalStyles from 'utils/styles/global'
+import Navigation from 'components/Navigation'
 
 const MainApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   globalStyles()
@@ -11,6 +12,7 @@ const MainApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <AppFrame>
+        <Navigation />
         <Component {...pageProps} />
         <Footer />
       </AppFrame>

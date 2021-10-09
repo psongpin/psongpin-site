@@ -37,7 +37,7 @@ const CollapsibleContent = styled(Collapsible.Content, {
 
 const CollapsibleTrigger = styled(Collapsible.Trigger, {
   fontSize: '$xs',
-  color: '$slateSubtleBorderColor',
+  color: '$slateAppBg',
   width: '$full',
   display: 'inline-flex',
   flexCenter: true,
@@ -47,7 +47,7 @@ const CollapsibleTrigger = styled(Collapsible.Trigger, {
     marginRight: '$3',
   },
   '&:hover': {
-    color: '$slateAppBg',
+    color: '$slateBorderHoverColor',
   },
   '&[data-state="open"]': {
     '& .icon-down': {
@@ -78,7 +78,7 @@ const SocialLink = styled('a', {
   marginBottom: 6,
   flexCenter: true,
   verticalAlign: 'middle',
-  color: '$slateSubtleBorderColor',
+  color: '$slateAppBg',
   marginRight: '$4',
   width: 20,
   height: 20,
@@ -87,7 +87,7 @@ const SocialLink = styled('a', {
     marginRight: 0,
   },
   '&:hover': {
-    color: '$slateAppBg',
+    color: '$slateBorderHoverColor',
   },
 })
 
