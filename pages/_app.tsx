@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 
 import AppFrame from 'components/AppFrame'
+import Footer from 'components/Footer'
 
 import globalStyles from 'utils/styles/global'
 
@@ -11,6 +12,7 @@ const MainApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     <>
       <AppFrame>
         <Component {...pageProps} />
+        <Footer />
       </AppFrame>
     </>
   )

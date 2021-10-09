@@ -1,6 +1,6 @@
 import { styled } from 'utils/styles/stitches.config'
 
-const Button = styled('div', {
+const Button = styled('button', {
   display: 'inline-flex',
   flexCenter: true,
   borderRadius: '$base',
